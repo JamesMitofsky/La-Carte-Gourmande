@@ -1,11 +1,7 @@
 main();
 
 function main() {
-  console.log("main function running");
-  let svg = document.getElementById("green-space");
-  let testDiv = document.getElementById("test-div");
-
-  addListener(testDiv);
+  let svg = document.getElementById("number3");
   addListener(svg);
 }
 
