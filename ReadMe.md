@@ -1,0 +1,11 @@
+# Resources
+
+## SVGS
+
+### Changing SVG render order
+
+- https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements
+
+### Apply border style to SVG paths
+
+- https://stackoverflow.com/a/18330345/5395435
