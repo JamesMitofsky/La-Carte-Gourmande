@@ -9,31 +9,30 @@ svg {
 
 /* Static display all map locations */
 path.point-of-interest {
-  stroke: #646464;
   stroke-width: 2px;
-  stroke-dasharray: 7;
-  animation: rotate 3s infinite;
-  animation-direction: alternate;
-  transform-origin: 50% 45%;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  stroke-dasharray: 4;
+  animation: pulse 1s ease infinite alternate;
 }
 
 @keyframes pulse {
+  from {
+    transform: translate(0%, 0%) scale(1);
+    stroke: #1d59ad;
+  }
+  to {
+    transform: scale(1.1) translate(-33.4px, -30.8px);
+    stroke: #499ccf;
+  }
+}
+
+/* @keyframes pulse {
   from {
     transform: scale(1);
   }
   to {
     transform: scale(0.9);
   }
-}
+} */
 
 /* @keyframes translate {
   from {
