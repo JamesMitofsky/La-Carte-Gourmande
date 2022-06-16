@@ -1,9 +1,8 @@
 ---
-title: Original mcGee
+title: Keys & Co.
 tags: cards
 address: 123 boulevard
 social-media-link: instagram.com
-css-id: keys-and-co
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius elit

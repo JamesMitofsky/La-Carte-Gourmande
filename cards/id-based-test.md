@@ -1,9 +1,9 @@
 ---
-title: Original mcGee
+title: ID based test
 tags: cards
 address: 123 boulevard
 social-media-link: instagram.com
-css-id: keys-and-co
+cssId: keys-and-co
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius elit

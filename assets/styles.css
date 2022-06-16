@@ -15,26 +15,29 @@ svg {
 /* Static display all map locations */
 .point-of-interest {
   stroke-width: 2px;
-  stroke-dasharray: 4;
-  animation: pulse 1s ease infinite alternate;
+  stroke-dasharray: 5;
+  animation: pulse 0.8s ease infinite alternate;
   transition: all ease 0.2s;
+  filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
 }
 
 .point-of-interest:hover {
   cursor: pointer;
   animation-play-state: paused;
-  stroke-width: 4px;
-  stroke-dasharray: 7;
 }
 
 @keyframes pulse {
   from {
     transform: translate(0%, 0%) scale(1);
     stroke: #1d59ad;
+    /* stroke-dasharray: 5; */
+    filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
   }
   to {
     transform: scale(1.1) translate(-33.4px, -30.8px);
     stroke: #499ccf;
+    /* stroke-dasharray: 3; */
+    filter: drop-shadow(3px 3px 1px rgb(0 0 0 / 0.4));
   }
 }
 

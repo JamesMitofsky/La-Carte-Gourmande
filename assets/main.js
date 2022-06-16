@@ -1,22 +1,35 @@
 main();
-var dialog = document.querySelector("dialog");
-function openDialog(evt) {
-  // set dialog content to match clicked element
-  let targetElement = evt.target.id;
-  let dialogContent = document.getElementById("dialogHeader");
-  dialogContent.innerHTML = targetElement;
-  dialog.showModal();
-}
-function closeDialog() {
-  dialog.close();
-}
 
 function main() {
-  //   get point of interest element and listen for click
-  let svg = document.getElementById("number3");
-  addDialogListener(svg);
+  // All unique names used for the restaurants
+  let arrayOfNames = ["keys-and-co", "test-for-proof"];
+
+  // convert names into meaningful HTML/CSS usable IDs
+  let nameIDs = getIDs(arrayOfNames);
+
+  addListeners(nameIDs);
 }
 
-function addDialogListener(el) {
-  el.addEventListener("click", openDialog);
+function getIDs(arrayOfNames) {
+  let nameIDs = [];
+  arrayOfNames.forEach((name) => {
+    nameIDs.push(buildNameIDs(name));
+  });
+  return nameIDs;
+}
+
+function buildNameIDs(name) {
+  let mapID = name.concat("-map");
+  let cardID = name.concat("-card");
+
+  return { name, mapID, cardID };
+}
+
+function addListeners(nameIDs) {
+  // add click listener to each object in array
+  nameIDs.forEach((nameID) => {
+    document.getElementById(`${nameID.mapID}`).addEventListener("click", () => {
+      alert("running programmatically");
+    });
+  });
 }

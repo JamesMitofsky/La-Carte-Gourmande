@@ -5,11 +5,11 @@ title: Home
 
 <h1>Les Bons Verres à Caen</h1>
 
-<div>{% include "circle.svg" %}</div>
+{% include "circle.svg" %}
 
 <section class="carosel">
   {%- for card in collections.cards -%}
-  <div class="card">
+  <div class="card" id="{{ card.data.cssId }}-card">
     <h2 id="card-hero-txt">{{ card.data.title }}</h2>
     <p>{{ card.templateContent | safe }}</p>
   </div>
