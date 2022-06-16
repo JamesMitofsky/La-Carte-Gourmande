@@ -1,5 +1,6 @@
 :root {
   --main-theme: #f8e3d1;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -8,8 +9,13 @@ body {
 }
 
 svg {
-  height: 100vh;
-  width: -webkit-fill-available;
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
 }
 
 /* Static display all map locations */
@@ -82,4 +88,8 @@ svg {
 /* remove margin from all children of card (h1, p) */
 .card * {
   margin: 0;
+}
+
+h1 {
+  position: absolute;
 }

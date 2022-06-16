@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Created with Vectornator (http://vectornator.io/) -->
-<svg>
+<svg id="map-of-caen" viewBox="0 0 900 900" version="1.1">
 <defs>
 <clipPath id="TextBounds">
 <rect height="15" width="10.8104" x="317.635" y="636.885"/>
