@@ -4,8 +4,9 @@ title: Home
 ---
 
 <h1>Les Bons Verres à Caen</h1>
-
-{% include "circle.svg" %}
+<iframe src="/assets/circle.svg" frameborder="0"
+  >{% include "circle.svg" %}</iframe
+>
 
 <section class="carosel">
   {%- for card in collections.cards -%}
