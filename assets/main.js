@@ -1,14 +1,22 @@
 main();
+var dialog = document.querySelector("dialog");
+function openDialog(evt) {
+  // set dialog content to match clicked element
+  let targetElement = evt.target.id;
+  let dialogContent = document.getElementById("dialogHeader");
+  dialogContent.innerHTML = targetElement;
+  dialog.showModal();
+}
+function closeDialog() {
+  dialog.close();
+}
 
 function main() {
+  //   get point of interest element and listen for click
   let svg = document.getElementById("number3");
-  addListener(svg);
+  addDialogListener(svg);
 }
 
-function listenerCallback(evt) {
-  alert(`You hit the listener callback for ${evt.currentTarget.id}`);
-}
-
-function addListener(el) {
-  el.addEventListener("click", listenerCallback);
+function addDialogListener(el) {
+  el.addEventListener("click", openDialog);
 }

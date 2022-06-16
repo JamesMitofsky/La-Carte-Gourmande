@@ -1,5 +1,9 @@
+:root {
+  --main-theme: #f8e3d1;
+}
+
 body {
-  background-color: #f8e3d1;
+  background-color: var(--main-theme);
 }
 
 svg {
@@ -8,10 +12,18 @@ svg {
 }
 
 /* Static display all map locations */
-path.point-of-interest {
+.point-of-interest {
   stroke-width: 2px;
   stroke-dasharray: 4;
   animation: pulse 1s ease infinite alternate;
+  transition: all ease 0.2s;
+}
+
+.point-of-interest:hover {
+  cursor: pointer;
+  animation-play-state: paused;
+  stroke-width: 4px;
+  stroke-dasharray: 7;
 }
 
 @keyframes pulse {
@@ -25,22 +37,15 @@ path.point-of-interest {
   }
 }
 
-/* @keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.9);
-  }
-} */
+dialog {
+  position: absolute;
+  top: 0;
+  width: 90vw;
+  height: 90vh;
+  background: var(--main-theme);
+  transition: all ease 2s;
+}
 
-/* @keyframes translate {
-  from {
-    transform: translate(0);
-    stroke: blue;
-  }
-  to {
-    transform: translate(-20%, -20%);
-    stroke: red;
-  }
-} */
+dialog::backdrop {
+  background: #ffffffa8;
+}
