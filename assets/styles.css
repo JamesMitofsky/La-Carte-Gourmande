@@ -57,39 +57,41 @@ svg {
 }
 
 .card {
-  padding: 0.5em;
-  margin: 1em 0.2em;
-  background: orange;
+  padding: 1em;
+  margin: 1em;
+  background: white;
+  border-radius: 0.5em;
   transition: all ease 2s;
   flex: 1 1 0px;
   height: 8em;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
+  max-width: 40vw;
+  box-shadow: 1px 3px 7px rgb(101 82 66);
 }
 
 .card:after {
   content: "";
-  background-color: green;
   position: absolute;
   width: 100%;
   bottom: 0;
   height: 2.6em;
   /* compensating for card padding */
-  margin: 0 -0.5em;
+  margin: 0 -1em;
   background: linear-gradient(
     180deg,
     rgba(255, 240, 208, 0) 0%,
-    rgba(180, 121, 19, 0.821) 50%,
-    rgb(167, 125, 46) 100%
+    rgba(57, 57, 57, 0.594) 50%,
+    rgb(61, 61, 61) 100%
   );
-}
-
-/* remove margin from all children of card (h1, p) */
-.card * {
-  margin: 0;
 }
 
 h1 {
   position: absolute;
+}
+
+h2 {
+  text-decoration: underline pink 0.15em;
+  margin: 1 0;
 }
