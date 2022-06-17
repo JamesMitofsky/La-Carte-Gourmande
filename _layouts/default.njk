@@ -3,14 +3,14 @@
   <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/styles.css" />
-    <script type="text/javascript" src="/assets/svg-pan-zoom.js"></script>
   </head>
 
   <body>
     {{ content | safe }}
   </body>
 
-  <script type="text/javascript" src="assets/main.js"></script>
+  <!-- <script type="text/javascript" src="/assets/main.js"></script> -->
+  <script type="text/javascript" src="/assets/svg-pan-zoom.js"></script>
   <script>
     // Don't use window.onLoad like this in production, because it can only listen to one function.
     window.onload = function () {
