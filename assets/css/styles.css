@@ -1,5 +1,5 @@
 :root {
-  --main-threme: #f8e3d1;
+  --main-theme: #f8e3d1;
   --border-radius: 0.3em;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
@@ -10,7 +10,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background-color: var(--main-threme);
+  background-color: var(--main-theme);
 }
 
 svg {
