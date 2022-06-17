@@ -1,8 +1,10 @@
 {
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1"
+    "@11ty/eleventy": "^1.0.1",
+    "sass": "^1.52.3"
   },
   "scripts": {
-    "serve": "npx @11ty/eleventy --serve"
+    "serve": "npx @11ty/eleventy --serve",
+    "watch:sass": "npx sass assets/css/sass:_site/assets/css --watch"
   }
 }
