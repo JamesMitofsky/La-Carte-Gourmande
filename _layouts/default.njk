@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
@@ -10,8 +10,11 @@
     {{ content | safe }}
   </body>
 
-  <!-- <script type="text/javascript" src="/assets/main.js"></script> -->
-  <script type="text/javascript" src="/assets/svg-pan-zoom.min.js"></script>
+  <!-- <script type="text/javascript" src="/assets/JavaScript/main.js"></script> -->
+  <script
+    type="text/javascript"
+    src="/assets/JavaScript/svg-pan-zoom.min.js"
+  ></script>
   <script>
     // Don't use window.onLoad like this in production, because it can only listen to one function.
     window.onload = function () {
