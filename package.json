@@ -5,6 +5,7 @@
   },
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass assets/css/sass:_site/assets/css --watch"
+    "watch:sass": "npx sass assets/css/sass:_site/assets/css --watch",
+    "start": "npm run watch:sass & npm run serve"
   }
 }
