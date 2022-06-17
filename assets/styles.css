@@ -3,7 +3,7 @@
   --border-radius: 0.3rem;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
-  font-size: 40px;
+  font-size: 16px;
 }
 
 html,
@@ -110,6 +110,9 @@ h2 {
 }
 
 @media screen and (min-width: 400px) {
+  :root {
+    font-size: 35px;
+  }
   h1 {
     width: fit-content;
     border-bottom-right-radius: var(--border-radius);
