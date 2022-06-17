@@ -67,7 +67,7 @@ svg {
   border-radius: var(--border-radius);
   /* transition: all ease 2s; */
   flex: 1 1 0px;
-  height: 30vh;
+  height: 20vh;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
@@ -116,5 +116,6 @@ h2 {
   }
   .card {
     margin: 0.5em;
+    height: 15vh;
   }
 }
