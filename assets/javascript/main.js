@@ -8,7 +8,7 @@ function main() {
   // let nameIDs = getIDs(arrayOfNames);
   // addListeners(nameIDs);
 
-  // hideLoadingScreen();
+  hideLoadingScreen();
 }
 
 function getIDs(arrayOfNames) {
