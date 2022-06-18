@@ -45,23 +45,11 @@
   <script type="text/javascript" src="/assets/JavaScript/main.js"></script>
   <script
     type="text/javascript"
-    src="/assets/JavaScript/svg-pan-zoom.min.js"
+    src="/assets/javascript/svg-pan-zoom.min.js"
   ></script>
-  <script>
-    // Don't use window.onLoad like this in production, because it can only listen to one function.
-    window.onload = function () {
-      // Expose to window namespase for testing purposes
-      window.zoomTiger = svgPanZoom("#map-of-caen", {
-        zoomEnabled: true,
-        controlIconsEnabled: false,
-        fit: true,
-        center: true,
-        // viewportSelector: document.getElementById('demo-tiger').querySelector('#g4') // this option will make library to misbehave. Viewport should have no transform attribute
-      });
-    };
-  </script>
   <script
     type="text/javascript"
-    src="/assets/JavaScript/hammer.min.js"
+    src="/assets/javascript/hammer.min.js"
   ></script>
+  <script src="/assets/javascript/svg-pan-params.js"></script>
 </html>
