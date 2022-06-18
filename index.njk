@@ -15,7 +15,7 @@ title: Home
 
 <section class="carosel">
   {%- for card in collections.cards -%}
-  <div class="card" id="{{ card.data.cssId }}-card">
+  <div class="card" id="{{ card.data.cssID }}-card">
     <h2 id="card-hero-txt">{{ card.data.title }}</h2>
     <p>{{ card.templateContent | safe }}</p>
   </div>
