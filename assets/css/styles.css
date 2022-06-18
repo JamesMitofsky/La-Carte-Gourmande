@@ -34,6 +34,7 @@ svg {
   font-size: 0.6em;
   background-color: rgba(255, 255, 255, 0.845);
   border-radius: var(--border-radius);
+  z-index: 1;
 }
 
 .title-and-attribution * {
