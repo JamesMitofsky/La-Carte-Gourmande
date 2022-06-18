@@ -119,7 +119,7 @@ h2 {
 }
 
 #loading object {
-  height: 100px;
+  height: 20em;
   display: flex;
   flex: 1;
 }

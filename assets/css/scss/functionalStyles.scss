@@ -1,28 +1,39 @@
-object path,
+#loading svg path,
 header * {
   opacity: 0;
-  transform: transformY(-5em);
+  transform: translateY(-5em);
 }
 
+// add animation to all SVG paths
 @for $i from 1 through 250 {
-  object path:nth-child(#{$i}) {
-    animation: animateIn-fade-rise ease-in-out forwards;
-    animation-delay: #{$i * 0.1 + 0.5}s;
-    animation-duration: 14s;
+  // only for paths which are sequentially even children of the SVG
+  @if $i % 2 == 0 {
+    #loading svg path:nth-child(#{$i}) {
+      animation: animateIn ease forwards;
+      animation-delay: #{$i * 0.08 + 0.5}s;
+      animation-duration: 0.2s;
+      transform-origin: center;
+    }
+  }
+  #loading svg path:nth-child(#{$i}) {
+    animation: animateIn ease forwards;
+    animation-delay: #{$i * 0.04 +0.5}s;
+    animation-duration: 0.2s;
     transform-origin: center;
   }
 }
+
 @for $i from 1 through 2 {
   header *:nth-child(#{$i}) {
-    animation: animateIn-fade-rise 0.4s ease-in-out forwards;
-    animation-delay: #{$i * 0.2}s;
+    animation: animateIn 1.5s ease forwards;
+    animation-delay: #{$i * 0.3}s;
     transform-origin: center;
   }
 }
 
-@keyframes animateIn-fade-rise {
+@keyframes animateIn {
   0% {
-    transform: transformY(-5em);
+    transform: translateY(-5em);
     opacity: 0;
   }
 
