@@ -63,17 +63,16 @@ svg {
 
 .card {
   padding: 1em;
-  margin: 1em;
+  margin: 0.5em;
   background: white;
   border-radius: var(--border-radius);
-  /* transition: all ease 2s; */
   flex: 1 1 0px;
-  height: 20vh;
+  height: 25vh;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
   max-width: 40vw;
-  box-shadow: 1px 3px 7px rgb(101 82 66);
+  box-shadow: 1px 3px 3px rgb(61, 61, 61);
 }
 
 .card:after {
@@ -130,7 +129,6 @@ h2 {
     border-bottom-right-radius: var(--border-radius);
   }
   .card {
-    margin: 0.5em;
     height: 15vh;
   }
 }
