@@ -1,11 +1,8 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("assets/css/scss");
 
   eleventyConfig.addPassthroughCopy("assets");
-
-  eleventyConfig.setBrowserSyncConfig({
-    files: "./_site/assets/css/**/*.css",
-  });
 
   return {
     dir: {

@@ -114,7 +114,7 @@ h2 {
   z-index: 2;
 }
 
-#loading-svg * {
+/* #loading-svg * {
   transition: all ease 2s;
   animation-name: animateIn;
   animation-duration: 350ms;
@@ -138,6 +138,7 @@ h2 {
     opacity: 1;
   }
 }
+ */
 
 @media screen and (min-width: 500px) {
   :root {

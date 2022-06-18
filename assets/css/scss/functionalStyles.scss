@@ -1,0 +1,23 @@
+path {
+  transition: all 0.4s ease;
+}
+
+@for $i from 1 through 250 {
+  path:nth-child(#{$i}) {
+    animation: animateIn-fade-rise 0.5s ease-in-out forwards;
+    animation-delay: #{$i * 0.01}s;
+    transform-origin: center;
+  }
+}
+
+@keyframes animateIn-fade-rise {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
