@@ -91,14 +91,14 @@ svg {
   );
 }
 
-h1 {
-  position: absolute;
-  z-index: 1;
-  background-color: #ffffff99;
-  margin: 0;
-  padding: 0.5em;
+header {
   text-align: center;
-  width: -webkit-fill-available;
+}
+
+h1 {
+  font-size: 4em;
+  color: pink;
+  filter: drop-shadow(0.5px 1.8px 1.3px #9d1d33);
 }
 
 h2 {
@@ -113,6 +113,15 @@ h2 {
   background-color: var(--secondary-theme);
   z-index: 2;
   transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#loading object {
+  height: 100px;
+  display: flex;
+  flex: 1;
 }
 
 .hidden {
