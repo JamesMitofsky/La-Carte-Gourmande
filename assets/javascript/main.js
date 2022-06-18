@@ -5,9 +5,10 @@ function main() {
   let arrayOfNames = ["keys-and-co", "test-for-proof"];
 
   // convert names into meaningful HTML/CSS usable IDs
-  let nameIDs = getIDs(arrayOfNames);
+  // let nameIDs = getIDs(arrayOfNames);
+  // addListeners(nameIDs);
 
-  addListeners(nameIDs);
+  hideLoadingScreen();
 }
 
 function getIDs(arrayOfNames) {
@@ -32,4 +33,25 @@ function addListeners(nameIDs) {
       alert("running programmatically");
     });
   });
+}
+
+function hideElement(el) {
+  // add class .hidden to el
+  el.classList.add("hidden");
+}
+
+function hideLoadingScreen() {
+  // listen for DOM to render; infer that CSS loading animation begins when DOM renders
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      // wait after content is loaded for CSS animations to complete
+      setTimeout(() => {
+        // get element with id "loading"
+        let loading = document.getElementById("loading");
+        hideElement(loading);
+      }, "2500");
+    },
+    false
+  );
 }
