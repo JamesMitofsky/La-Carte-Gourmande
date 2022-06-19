@@ -8,6 +8,7 @@ window.onload = function () {
     fit: true,
     center: true,
     customEventsHandler: eventsHandler,
+    minZoom: 1,
   });
 };
 
