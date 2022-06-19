@@ -4,7 +4,7 @@ window.onload = function () {
   var eventsHandler;
   window.panZoomInstance = svgPanZoom("#map-of-caen", {
     zoomEnabled: true,
-    controlIconsEnabled: true,
+    controlIconsEnabled: false,
     fit: true,
     center: true,
     customEventsHandler: eventsHandler,
