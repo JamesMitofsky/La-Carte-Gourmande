@@ -52,6 +52,7 @@ function cards() {
           // let userData = prompt(
           //   "Pass an object indicating your desired move distance. (e.g. {x: 5, y: 3 }"
           // );
+          customPanBy({ x: 5, y: 10 });
         });
       }
     }

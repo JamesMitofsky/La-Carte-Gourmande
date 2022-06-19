@@ -83,3 +83,33 @@ window.onload = function () {
     customEventsHandler: eventsHandler,
   });
 };
+
+window.panZoomInstance = svgPanZoom("#map-of-caen", {
+  zoomEnabled: true,
+  controlIconsEnabled: true,
+  fit: true,
+  center: true,
+  minZoom: 0.1,
+});
+
+function customPanBy(amount) {
+  // Zoom out
+  panZoomInstance.zoom(1);
+  // {x: 1, y: 2}
+  var animationTime = 300, // ms
+    animationStepTime = 15, // one frame per 30 ms
+    animationSteps = animationTime / animationStepTime,
+    animationStep = 0,
+    intervalID = null,
+    stepX = amount.x / animationSteps,
+    stepY = amount.y / animationSteps;
+
+  intervalID = setInterval(function () {
+    if (animationStep++ < animationSteps) {
+      panZoomInstance.panBy({ x: stepX, y: stepY });
+    } else {
+      // Cancel interval
+      clearInterval(intervalID);
+    }
+  }, animationStepTime);
+}
