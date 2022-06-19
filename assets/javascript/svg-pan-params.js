@@ -2,7 +2,38 @@
 window.onload = function () {
   // Expose to window namespase for testing purposes
   var eventsHandler;
+  window.panZoomInstance = svgPanZoom("#map-of-caen", {
+    zoomEnabled: true,
+    controlIconsEnabled: true,
+    fit: true,
+    center: true,
+    customEventsHandler: eventsHandler,
+  });
+};
 
+function customPanTo(amount) {
+  // Zoom out
+  panZoomInstance.zoom(1);
+  // {x: 1, y: 2}
+  var animationTime = 300, // ms -- this does not seem to work
+    animationStepTime = 5, // one frame per 30 ms if set to 15
+    animationSteps = animationTime / animationStepTime,
+    animationStep = 0,
+    intervalID = null,
+    stepX = amount.x / animationSteps,
+    stepY = amount.y / animationSteps;
+
+  intervalID = setInterval(function () {
+    if (animationStep++ < animationSteps) {
+      panZoomInstance.pan({ x: stepX, y: stepY });
+    } else {
+      // Cancel interval
+      clearInterval(intervalID);
+    }
+  }, animationStepTime);
+}
+
+function eventHandlerStorage() {
   eventsHandler = {
     haltEventListeners: [
       "touchstart",
@@ -74,42 +105,4 @@ window.onload = function () {
       this.hammer.destroy();
     },
   };
-
-  window.panZoom = svgPanZoom("#map-of-caen", {
-    zoomEnabled: true,
-    controlIconsEnabled: false,
-    fit: true,
-    center: true,
-    customEventsHandler: eventsHandler,
-  });
-};
-
-window.panZoomInstance = svgPanZoom("#map-of-caen", {
-  zoomEnabled: true,
-  controlIconsEnabled: true,
-  fit: true,
-  center: true,
-  minZoom: 0.1,
-});
-
-function customPanBy(amount) {
-  // Zoom out
-  panZoomInstance.zoom(1);
-  // {x: 1, y: 2}
-  var animationTime = 300, // ms
-    animationStepTime = 15, // one frame per 30 ms
-    animationSteps = animationTime / animationStepTime,
-    animationStep = 0,
-    intervalID = null,
-    stepX = amount.x / animationSteps,
-    stepY = amount.y / animationSteps;
-
-  intervalID = setInterval(function () {
-    if (animationStep++ < animationSteps) {
-      panZoomInstance.panBy({ x: stepX, y: stepY });
-    } else {
-      // Cancel interval
-      clearInterval(intervalID);
-    }
-  }, animationStepTime);
 }
