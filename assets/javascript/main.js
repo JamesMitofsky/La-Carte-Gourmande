@@ -1,7 +1,7 @@
 main();
 
 function main() {
-  // hideLoadingScreen();
+  hideLoadingScreen();
   cards();
 }
 
