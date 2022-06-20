@@ -8,19 +8,9 @@ function panToPin(relativeDistance) {
 
   panZoom.zoom(3);
 }
-
-// Expose to window namespase for testing purposes
-var eventsHandler;
-window.panZoom = svgPanZoom("#map-of-caen", {
-  zoomEnabled: true,
-  controlIconsEnabled: false,
-  fit: true,
-  center: true,
-  customEventsHandler: eventsHandler,
-  minZoom: 1,
-});
-
 window.onload = function () {
+  var eventsHandler;
+
   eventsHandler = {
     haltEventListeners: [
       "touchstart",
@@ -92,4 +82,13 @@ window.onload = function () {
       this.hammer.destroy();
     },
   };
+
+  // Expose to window namespace for testing purposes
+  window.panZoom = svgPanZoom("#map-of-caen", {
+    zoomEnabled: true,
+    controlIconsEnabled: false,
+    fit: 1,
+    center: 1,
+    customEventsHandler: eventsHandler,
+  });
 };
