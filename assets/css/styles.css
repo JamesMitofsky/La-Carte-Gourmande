@@ -25,18 +25,12 @@ svg {
   width: 100%;
 }
 
-/* Static display all map locations */
-.point-of-interest {
-  animation: pulse 1s ease infinite alternate;
+.active-POI {
+  animation: bounce 1s ease infinite alternate;
   filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
 }
 
-.point-of-interest:hover {
-  cursor: pointer;
-  animation-play-state: paused;
-}
-
-@keyframes pulse {
+@keyframes bounce {
   from {
     transform: translateY(0);
     fill: #f15e26;
@@ -44,7 +38,7 @@ svg {
   }
   to {
     transform: translateY(0.5em);
-    fill: pink;
+    fill: rgb(200, 77, 97);
     filter: drop-shadow(3px 3px 1px rgb(0 0 0 / 0.4));
   }
 }

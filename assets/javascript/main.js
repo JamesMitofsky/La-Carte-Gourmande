@@ -30,38 +30,49 @@ function cards() {
   // get elements with class "card"
   let cards = document.getElementsByClassName("card");
   // get elements with class point-of-interest
-  let pointsOfInterest = document.getElementsByClassName("point-of-interest");
+  let pointsOfInterest = document.getElementsByClassName("POI");
 
   // compare cards and pointsOfInterest to find matching elements
   for (let i = 0; i < cards.length; i++) {
     for (let j = 0; j < pointsOfInterest.length; j++) {
-      // create element for current iteration of cards and pointsOfInterest
+      // trim last characters from the card ID to get the pure restaurant name
       let card = cards[i];
-      let pointOfInterest = pointsOfInterest[j];
-
-      // trim last characters from card id
       let cardId = card.id.slice(0, -5);
-      // trim last characters from pointOfInterest id
-      let pointOfInterestId = pointOfInterest.id.slice(0, -4);
+      // Get POI ID as a property of the element
+      let pointOfInterestID = pointsOfInterest[j].id;
 
       // return true if cardId and pointOfInterestId match
-      if (cardId === pointOfInterestId) {
+      if (cardId === pointOfInterestID) {
         // add click event listener to card
         card.addEventListener("click", function () {
-          let relativeDistance = getRelativeDistanceOfPin();
-          panToPin(relativeDistance);
+          let relativeDistance = getRelativeDistanceOfPin(pointOfInterestID);
+          // remove the active-poi class from any previous instances
+          removeActiveClass();
+          document
+            .getElementById(pointOfInterestID)
+            .classList.add("active-POI");
+          // panToPin(relativeDistance);
         });
       }
     }
   }
 }
 
-function getRelativeDistanceOfPin() {
+function removeActiveClass() {
+  // get elements with class "active-POI"
+  let activePOIs = document.getElementsByClassName("active-POI");
+  // remove class "active-POI" from all elements
+  for (let i = 0; i < activePOIs.length; i++) {
+    activePOIs[i].classList.remove("active-POI");
+  }
+}
+
+function getRelativeDistanceOfPin(pointOfInterestID) {
   // return object of viewport dimensions
   let map = document.getElementsByClassName("svg-pan-zoom_viewport")[0];
   let mapDimensions = getElDimensions(map);
   // return object of pin dimensions
-  let pin = document.getElementById("le-comptoir-POI");
+  let pin = document.getElementById(pointOfInterestID);
   let pinDimensions = getElDimensions(pin);
 
   // compare map and pin dimensions to find relative distance of pin
@@ -70,13 +81,6 @@ function getRelativeDistanceOfPin() {
     y: pinDimensions.y - mapDimensions.y,
   };
   return relativeDistance;
-}
-
-function getXandY(el) {
-  // get x and y positions of el
-  let x = el.offsetLeft;
-  let y = el.offsetTop;
-  return { x, y };
 }
 
 function getElDimensions(el) {
