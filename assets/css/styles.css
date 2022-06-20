@@ -27,19 +27,19 @@ svg {
 
 .active-POI {
   animation: bounce 1s ease infinite alternate;
-  filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+  filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
 }
 
 @keyframes bounce {
   from {
     transform: translateY(0);
     fill: #f15e26;
-    filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+    filter: drop-shadow(3px 3px 3px rgba(42, 42, 42, 0.4));
   }
   to {
-    transform: translateY(0.5em);
+    transform: translateY(0.3em);
     fill: rgb(200, 77, 97);
-    filter: drop-shadow(3px 3px 1px rgb(0 0 0 / 0.4));
+    filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
   }
 }
 
