@@ -2,7 +2,7 @@ main();
 
 function main() {
   hideLoadingScreen();
-  cards();
+  matchCardsWithPins();
 }
 
 function hideLoadingScreen() {
@@ -26,7 +26,7 @@ function hideElement(el) {
   el.classList.add("hidden");
 }
 
-function cards() {
+function matchCardsWithPins() {
   // get elements with class "card"
   let cards = document.getElementsByClassName("card");
   // get elements with class point-of-interest
