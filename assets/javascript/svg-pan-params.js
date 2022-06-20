@@ -1,14 +1,3 @@
-// Expose to window namespase for testing purposes
-var eventsHandler;
-window.panZoom = svgPanZoom("#map-of-caen", {
-  zoomEnabled: true,
-  controlIconsEnabled: false,
-  fit: true,
-  center: true,
-  customEventsHandler: eventsHandler,
-  minZoom: 1,
-});
-
 function panToPin(relativeDistance) {
   panZoom.center();
 
@@ -20,7 +9,18 @@ function panToPin(relativeDistance) {
   panZoom.zoom(3);
 }
 
-function eventHandlerStorage() {
+// Expose to window namespase for testing purposes
+var eventsHandler;
+window.panZoom = svgPanZoom("#map-of-caen", {
+  zoomEnabled: true,
+  controlIconsEnabled: false,
+  fit: true,
+  center: true,
+  customEventsHandler: eventsHandler,
+  minZoom: 1,
+});
+
+window.onload = function () {
   eventsHandler = {
     haltEventListeners: [
       "touchstart",
@@ -92,4 +92,4 @@ function eventHandlerStorage() {
       this.hammer.destroy();
     },
   };
-}
+};
