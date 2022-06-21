@@ -17,7 +17,7 @@ title: Home
   {%- for card in collections.cards -%}
   <div class="card" id="{{ card.data.cssID }}-card">
     <h2 id="card-hero-txt">{{ card.data.title }}</h2>
-    <p>{{ card.templateContent | safe }}</p>
+    <p>{{ card.data.description }}</p>
   </div>
   {%- endfor -%}
 </section>
