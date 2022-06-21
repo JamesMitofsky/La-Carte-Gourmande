@@ -17,6 +17,13 @@ title: Home
   {%- for card in collections.cards -%}
   <div class="card" id="{{ card.data.cssID }}-card">
     <h2 id="card-hero-txt">{{ card.data.title }}</h2>
+    <a
+      class="open-map-app"
+      data-restaurant-name="{{ card.data.title }}"
+      onClick="createMapLink()"
+      href=""
+      >Open Map →</a
+    >
     <p>{{ card.data.description }}</p>
   </div>
   {%- endfor -%}

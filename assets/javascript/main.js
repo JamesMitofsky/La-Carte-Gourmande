@@ -3,6 +3,7 @@ main();
 function main() {
   hideLoadingScreen();
   matchCardsWithPins();
+  createMapLink();
 }
 
 function hideLoadingScreen() {
@@ -97,4 +98,43 @@ function findCenterOfElement(el) {
     y: rect.top + rect.height / 2,
   };
   return center;
+}
+
+
+function createMapLink() {
+  // is the device on apple or Google device?
+  let deviceTypeURL = mapsSelector();
+
+  // get all elements with read-more class
+  let els = document.getElementsByClassName("open-map-app");
+  // create loop of all elements
+  for (let i = 0; i < els.length; i++) {
+    // build the right URL for the user's device
+    let el = els[i];
+    let restaurantName = el.getAttribute("data-restaurant-name");
+    let newURL = deviceTypeURL + restaurantName;
+    el.setAttribute("href", newURL);
+  }
+}
+
+function mapsSelector() {
+  // both map options will require the name of the place added at the end of the URL
+  if (iOS()) {
+    return "maps://maps.google.com/maps?q=";
+  } else return "https://maps.google.com/maps/place/";
+}
+
+function iOS() {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod",
+    ].includes(navigator.platform) ||
+    // iPad on iOS 13 detection
+    (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
 }

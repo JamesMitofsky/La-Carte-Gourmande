@@ -67,9 +67,9 @@ svg {
   transition: all ease 0.5s;
 }
 
-.card:after {
-  content: "Lire plus →";
+.open-map-app {
   position: absolute;
+  text-decoration: none;
   right: 0;
   bottom: 0;
   margin: 0.5em;
