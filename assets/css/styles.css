@@ -67,11 +67,24 @@ svg {
   transition: all ease 0.5s;
 }
 
+.card:after {
+  content: "Lire plus →";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0.5em;
+  background-color: #f15e26;
+  color: white;
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+  filter: drop-shadow(1px 2px 2px grey);
+}
+
 .card:hover {
   cursor: pointer;
 }
 
-.card:after {
+.card:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -81,8 +94,8 @@ svg {
   margin: 0 -1em;
   background: linear-gradient(
     180deg,
-    rgb(255 255 255 / 12%) 0%,
-    rgb(255 255 255 / 88%) 50%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.588) 50%,
     rgb(255 255 255) 100%
   );
 }
