@@ -7,5 +7,4 @@ number: 8
 cssID: le-comptoir
 lang: fr
 ---
-
 Du déjeuner à l'apéro, on aime les plats frais et savoureux revisité avec des notes exotiques. A déguster si possible en terrasse!

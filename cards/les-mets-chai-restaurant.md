@@ -7,5 +7,4 @@ number: 7
 cssID: les-mets-chai-restaurant
 lang: fr
 ---
-
 C'est le restaurant de la cave à vins. Une cuisine créative et des quilles nature ou en biodynamie, avec une offre plutôt tapas le soir.

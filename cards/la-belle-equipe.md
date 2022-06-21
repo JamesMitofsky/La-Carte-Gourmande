@@ -7,5 +7,4 @@ number: 6
 cssID: la-belle-equipe
 lang: fr
 ---
-
 C'est le bistro de quartier! Accueil convivial et cuisine maison, avec des bons produits de saison. On se régale.
