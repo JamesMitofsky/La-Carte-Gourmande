@@ -67,6 +67,10 @@ svg {
   transition: all ease 0.5s;
 }
 
+.card.active-card {
+  box-shadow: 0px 0px 10px 0px orange;
+}
+
 .open-map-app {
   position: absolute;
   text-decoration: none;
@@ -98,6 +102,10 @@ svg {
     rgba(255, 255, 255, 0.588) 50%,
     rgb(255 255 255) 100%
   );
+}
+
+.leftmost-card {
+  background-color: rgb(200, 77, 97);
 }
 
 header {

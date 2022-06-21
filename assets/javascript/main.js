@@ -3,6 +3,10 @@ main();
 function main() {
   hideLoadingScreen();
   matchCardsWithPins();
+  listenForLeftmostCard();
+
+  // onCarouselScroll(matchCardsWithPins);
+  // matchCardsWithPins();
   createMapLink();
 }
 
@@ -27,37 +31,110 @@ function hideElement(el) {
   el.classList.add("hidden");
 }
 
-function matchCardsWithPins() {
-  // get elements with class "card"
-  let cards = document.getElementsByClassName("card");
+function matchCardsWithPins(leftmostCard) {
   // get elements with class point-of-interest
   let pointsOfInterest = document.getElementsByClassName("POI");
 
   // compare cards and pointsOfInterest to find matching elements
-  for (let i = 0; i < cards.length; i++) {
-    for (let j = 0; j < pointsOfInterest.length; j++) {
-      // trim last characters from the card ID to get the pure restaurant name
-      let card = cards[i];
-      let cardId = card.id.slice(0, -5);
-      // Get POI ID as a property of the element
-      let pointOfInterestID = pointsOfInterest[j].id;
+  for (let j = 0; j < pointsOfInterest.length; j++) {
+    // trim last characters from the card ID to get the pure restaurant name
+    let cardId = leftmostCard.card.id.slice(0, -5);
+    // Get POI ID as a property of the element
+    let pointOfInterestID = pointsOfInterest[j].id;
 
-      // return true if cardId and pointOfInterestId match
-      if (cardId === pointOfInterestID) {
-        // add click event listener to card
-        card.addEventListener("click", function () {
-          let relativeDistance = getRelativeDistanceOfPin(pointOfInterestID);
-          // remove the active-poi class from any previous instances
-          removeActiveClass();
-          document
-            .getElementById(pointOfInterestID)
-            .classList.add("active-POI");
-          // panToPin(relativeDistance);
-        });
-      }
+    // return true if cardId and pointOfInterestId match
+    if (cardId === pointOfInterestID) {
+      // use relative distance to zoom in on pin
+      // let relativeDistance = getRelativeDistanceOfPin(pointOfInterestID);
+      removeActiveClass();
+      document.getElementById(pointOfInterestID).classList.add("active-POI");
     }
   }
 }
+
+function listenForLeftmostCard() {
+  // check current position of all cards on carousel scroll
+  let carousel = document.getElementsByClassName("carousel")[0];
+  carousel.addEventListener("scroll", () => {
+    // get card elements
+    let cards = document.getElementsByClassName("card");
+
+    // create array to hold the cards once they're turned into objects
+    let cardsArray = [];
+
+    // determine position of each card
+    for (let i = 0; i < cards.length; i++) {
+      let card = cards[i];
+      let cardDimensions = getElDimensions(card);
+      cardsArray.push({ card, cardDimensions });
+    }
+
+    // find the card which is the furthest left but still on screen
+    let leftmostCard = returnLeftmostCard(cardsArray);
+
+    // bounce pin related to card
+    matchCardsWithPins(leftmostCard);
+
+    // if leftmostCard already contains class "active-card"
+    if (leftmostCard.card.classList.contains("active-card")) return;
+
+    // if it doesn't yet have this class, remove from the previous card and add to the new card
+    // remove class "active-card" from all cards
+    removeClassFromElements(cardsArray, "active-card");
+    leftmostCard.card.classList.add("active-card");
+  });
+}
+
+function removeClassFromElements(elements, className) {
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].card.classList.remove(className);
+  }
+}
+
+function returnLeftmostCard(arrayOfObjs) {
+  let res = arrayOfObjs.reduce(function (prev, current) {
+    return prev.cardDimensions.left < current.cardDimensions.left &&
+      prev.cardDimensions.left > -100
+      ? prev
+      : current;
+  });
+  return res;
+}
+
+// function oldFuncForCards() {
+//   // modified
+//   let cards = document.getElementsByClassName("card");
+
+//   // var to remember which card is furthest left on screen
+//   let leftmostCardData;
+//   // loop of cards
+//   for (let i = 0; i < cards.length; i++) {
+//     let card = cards[i];
+
+//     // get bounding client rect of card to determine if it is leftmost
+//     let cardDimensionLeft = getElDimensions(card).left;
+
+//     // if first iteration of loop, assign first card as leftmostCardData
+//     if (i === 0) leftmostCardData = { card: null, cardDimensionLeft };
+
+//     //  if it's not off-screen on the left (left is greater than 0) & it's the furthest left
+//     // on-screen (it's left value is smaller than any other card)
+//     let notOffLeftSide = cardDimensionLeft >= 0;
+
+//     // only enter if-statement when leftmost card is on-screen (left position greater than 0)
+//     let furthestLeft;
+//     if (leftmostCardData.cardDimensionLeft > 0) {
+//       furthestLeft = cardDimensionLeft < leftmostCardData.cardDimensionLeft;
+//     } else {
+//       furthestLeft = false;
+//     }
+
+//     if (notOffLeftSide && furthestLeft) {
+//       leftmostCardData = { card, cardDimensionLeft };
+//     }
+//   }
+//   return leftmostCardData;
+// }
 
 function removeActiveClass() {
   // get elements with class "active-POI"
@@ -100,6 +177,36 @@ function findCenterOfElement(el) {
   return center;
 }
 
+function isEllipsisActive() {
+  // get paragraph elements that are children of class ".card"
+  let cards = document.getElementsByClassName("card");
+
+  let allParagraphs = [];
+  // create for loop with cards
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    // get paragraph elements that are children of class ".card"
+    let paragraphs = card.getElementsByTagName("p");
+
+    // convert HTML collections to an array
+    let parasArray = [...paragraphs];
+    allParagraphs.push(parasArray);
+  }
+  // flatten the now returned array
+  let flattenedParagraphs = allParagraphs.flat();
+
+  // loop through paragraphs
+  for (let i = 0; i < flattenedParagraphs.length; i++) {
+    // get paragraph element
+    let paragraph = flattenedParagraphs[i];
+    // test e.offsetWidth < e.scrollWidth;
+    ellipsisActive = paragraph.offsetWidth < paragraph.scrollWidth;
+    if (!ellipsisActive) continue;
+    // add class "read-more" to paragraph
+    paragraph.classList.add("read-more");
+    console.log("detected ellipsis on", paragraph);
+  }
+}
 
 function createMapLink() {
   // is the device on apple or Google device?
@@ -121,7 +228,7 @@ function mapsSelector() {
   // both map options will require the name of the place added at the end of the URL
   if (iOS()) {
     return "maps://maps.google.com/maps?q=";
-  } else return "https://maps.google.com/maps/place/";
+  } else return "https://maps.google.com/maps/search/";
 }
 
 function iOS() {
