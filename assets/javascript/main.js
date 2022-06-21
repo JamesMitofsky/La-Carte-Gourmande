@@ -2,11 +2,7 @@ main();
 
 function main() {
   hideLoadingScreen();
-  matchCardsWithPins();
   listenForLeftmostCard();
-
-  // onCarouselScroll(matchCardsWithPins);
-  // matchCardsWithPins();
   createMapLink();
 }
 
