@@ -6,5 +6,6 @@ social-media-link: instagram.com
 number: 8
 cssID: le-comptoir
 lang: fr
+description: >
+    Du déjeuner à l'apéro, on aime les plats frais et savoureux revisité avec des notes exotiques. A déguster si possible en terrasse!
 ---
-Du déjeuner à l'apéro, on aime les plats frais et savoureux revisité avec des notes exotiques. A déguster si possible en terrasse!

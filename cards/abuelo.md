@@ -5,6 +5,7 @@ address: 75 Rue de l'Oratoire, 14000 Caen
 social-media-link: instagram.com
 number: 3
 cssID: abuelo
-lang: fr
+lang: 
+description: >
+    En passant la porte, on arrive en Espagne. Il fait bon vivre dans la cour intérieure. Sangria y croquetas sont de rigueur.
 ---
-En passant la porte, on arrive en Espagne. Il fait bon vivre dans la cour intérieure. Sangria y croquetas sont de rigueur.

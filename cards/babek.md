@@ -7,5 +7,6 @@ css-id: keys-and-co
 number: 9
 cssID: babek
 lang: fr
+description: >
+    Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison."
 ---
-Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison.

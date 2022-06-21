@@ -6,5 +6,6 @@ social-media-link: instagram.com
 number: 1
 cssID: les-quilles
 lang: fr
+description: >
+    Dans le quartier historique, un bar chaleureux avec une belle carte des vins ! La carte des victuailles est en collab avec des restos du coin."
 ---
-Dans le quartier historique, un bar chaleureux avec une belle carte des vins ! La carte des victuailles est en collab avec des restos du coin.
