@@ -14,6 +14,10 @@ body {
   background-color: var(--secondary-theme);
 }
 
+main {
+  height: 100%;
+}
+
 svg {
   filter: drop-shadow(0.5px 1.8px 1.3px #d8b08d);
 }
@@ -21,8 +25,6 @@ svg {
 #container {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex: 1;
 }
 
 .active-POI {
@@ -41,15 +43,6 @@ svg {
     fill: rgb(200, 77, 97);
     filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
   }
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
 }
 
 .carousel {
