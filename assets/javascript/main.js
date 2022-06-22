@@ -42,10 +42,9 @@ function matchCardsWithPins(activeCard) {
     if (cardId === pointOfInterestID) {
       moveMapToPin(pointOfInterestID);
 
-      // use relative distance to zoom in on pin
-      // let relativeDistance = getRelativeDistanceOfPin(pointOfInterestID);
       let activePOIs = document.getElementsByClassName("active-POI");
       removeClassFromElements(activePOIs, "active-POI");
+
       document.getElementById(pointOfInterestID).classList.add("active-POI");
     }
   }
@@ -53,9 +52,8 @@ function matchCardsWithPins(activeCard) {
 
 function moveMapToPin(pointOfInterestID) {
   let poiEl = document.getElementById(pointOfInterestID);
-  let center = findCenterOfElement(poiEl);
 
-  panToPin(center);
+  panToPin(poiEl);
 }
 
 function listenForCardsHover() {
@@ -97,20 +95,12 @@ function removeClassFromElements(elements, className) {
   }
 }
 
-function getRelativeDistanceOfPin(pointOfInterestID) {
-  // return object of viewport dimensions
-  let map = document.getElementsByClassName("svg-pan-zoom_viewport")[0];
-  let mapDimensions = getElDimensions(map);
+function elementDimensions(elementID) {
   // return object of pin dimensions
-  let pin = document.getElementById(pointOfInterestID);
-  let pinDimensions = getElDimensions(pin);
+  let element = document.getElementById(elementID);
+  let elementDimensions = getElDimensions(element);
 
-  // compare map and pin dimensions to find relative distance of pin
-  let relativeDistance = {
-    x: pinDimensions.x - mapDimensions.x,
-    y: pinDimensions.y - mapDimensions.y,
-  };
-  return relativeDistance;
+  return elementDimensions;
 }
 
 function getElDimensions(el) {
@@ -118,15 +108,15 @@ function getElDimensions(el) {
   return (dimensions = el.getBoundingClientRect());
 }
 
-function findCenterOfElement(el) {
+function findElementLeftAndTop(el) {
   // get bounding client rect of el
-  let rect = el.getBoundingClientRect();
+  let elValues = el.getBoundingClientRect();
   // get center of rect
-  let center = {
-    x: rect.left + rect.width / 2,
-    y: rect.top + rect.height / 2,
+  let leftTopDimensions = {
+    left: elValues.left,
+    top: elValues.top,
   };
-  return center;
+  return leftTopDimensions;
 }
 
 function createMapLink() {

@@ -1,19 +1,28 @@
-function panToPin(relativeDistance) {
+function testingMath(poiEl) {
+  // get center of element with id "map-of-caen"
+  let map = document.getElementsByClassName("svg-pan-zoom_viewport")[0];
+  // get center of map element
+  let mapDistanceValues = findElementLeftAndTop(map);
+  let pinDistanceValues = findElementLeftAndTop(poiEl);
+
+  let correctDistance = {
+    x: mapDistanceValues.left - pinDistanceValues.left,
+    y: mapDistanceValues.top - pinDistanceValues.top,
+  };
+  console.log(correctDistance);
+
+  panZoom.panBy({ x: correctDistance.x, y: correctDistance.y });
+}
+
+function panToPin(poiEl) {
   // get viewport element
   // get svg which is child of element with id "container"
   let svg = document.getElementById("container").children[0];
   svg.classList.add("actively-moving");
 
-  panZoom.zoom(1);
-  panZoom.pan({ x: 0, y: 0 });
-  alert("finish zeroing");
+  panZoom.center();
 
-  // panZoom.pan({
-  //   x: relativeDistance.x,
-  //   y: relativeDistance.y,
-  // });
-
-  alert("finish panning");
+  testingMath(poiEl);
 
   setTimeout(() => {
     svg.classList.remove("actively-moving");
