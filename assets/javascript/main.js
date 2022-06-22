@@ -42,7 +42,8 @@ function matchCardsWithPins(activeCard) {
     if (cardId === pointOfInterestID) {
       // use relative distance to zoom in on pin
       // let relativeDistance = getRelativeDistanceOfPin(pointOfInterestID);
-      removeActiveClass();
+      let activePOIs = document.getElementsByClassName("active-POI");
+      removeClassFromElements(activePOIs, "active-POI");
       document.getElementById(pointOfInterestID).classList.add("active-POI");
     }
   }
@@ -69,18 +70,18 @@ function highlightCardAndPin(card, eventName, cards) {
     if (card.classList.contains("active-card")) return;
 
     // remove class from all other cards before re-assiging
-    for (let j = 0; j < cards.length; j++) {
-      // get card
-      let otherCard = cards[j];
-      // remove class "active-card" from all cards
-      otherCard.classList.remove("active-card");
-    }
+    removeClassFromElements(cards, "active-card");
     card.classList.add("active-card");
   });
 }
 
-function removeClassFromElements(element, className) {
-  element.classList.remove(className);
+function removeClassFromElements(elements, className) {
+  // iterate through elements
+  for (let i = 0; i < elements.length; i++) {
+    let element = elements[i];
+    // remove class from element
+    element.classList.remove(className);
+  }
 }
 
 function returnLeftmostCard(arrayOfObjs) {
@@ -91,50 +92,6 @@ function returnLeftmostCard(arrayOfObjs) {
       : current;
   });
   return res;
-}
-
-// function oldFuncForCards() {
-//   // modified
-//   let cards = document.getElementsByClassName("card");
-
-//   // var to remember which card is furthest left on screen
-//   let leftmostCardData;
-//   // loop of cards
-//   for (let i = 0; i < cards.length; i++) {
-//     let card = cards[i];
-
-//     // get bounding client rect of card to determine if it is leftmost
-//     let cardDimensionLeft = getElDimensions(card).left;
-
-//     // if first iteration of loop, assign first card as leftmostCardData
-//     if (i === 0) leftmostCardData = { card: null, cardDimensionLeft };
-
-//     //  if it's not off-screen on the left (left is greater than 0) & it's the furthest left
-//     // on-screen (it's left value is smaller than any other card)
-//     let notOffLeftSide = cardDimensionLeft >= 0;
-
-//     // only enter if-statement when leftmost card is on-screen (left position greater than 0)
-//     let furthestLeft;
-//     if (leftmostCardData.cardDimensionLeft > 0) {
-//       furthestLeft = cardDimensionLeft < leftmostCardData.cardDimensionLeft;
-//     } else {
-//       furthestLeft = false;
-//     }
-
-//     if (notOffLeftSide && furthestLeft) {
-//       leftmostCardData = { card, cardDimensionLeft };
-//     }
-//   }
-//   return leftmostCardData;
-// }
-
-function removeActiveClass() {
-  // get elements with class "active-POI"
-  let activePOIs = document.getElementsByClassName("active-POI");
-  // remove class "active-POI" from all elements
-  for (let i = 0; i < activePOIs.length; i++) {
-    activePOIs[i].classList.remove("active-POI");
-  }
 }
 
 function getRelativeDistanceOfPin(pointOfInterestID) {
