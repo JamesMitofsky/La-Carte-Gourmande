@@ -75,6 +75,10 @@ svg {
   /* height: 30vh; */
 }
 
+.card.active-card h2 {
+  text-decoration: underline pink 0.2em;
+}
+
 .open-map-app {
   position: absolute;
   text-decoration: none;
