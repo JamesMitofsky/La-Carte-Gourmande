@@ -65,11 +65,11 @@ function highlightCardAndPin(card, eventName, cards) {
   card.addEventListener(
     eventName,
     () => {
-      // bounce pin related to card
-      matchCardsWithPins(card);
-
       // if leftmostCard already contains class "active-card"
       if (card.classList.contains("active-card")) return;
+
+      // bounce pin related to card
+      matchCardsWithPins(card);
 
       // remove class from all other cards before re-assiging
       removeClassFromElements(cards, "active-card");
