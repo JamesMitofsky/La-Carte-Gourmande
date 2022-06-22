@@ -2,7 +2,7 @@ main();
 
 function main() {
   hideLoadingScreen();
-  listenForLeftmostCard();
+  listenForHover();
   createMapLink();
 }
 
@@ -27,14 +27,14 @@ function hideElement(el) {
   el.classList.add("hidden");
 }
 
-function matchCardsWithPins(leftmostCard) {
+function matchCardsWithPins(activeCard) {
   // get elements with class point-of-interest
   let pointsOfInterest = document.getElementsByClassName("POI");
 
   // compare cards and pointsOfInterest to find matching elements
   for (let j = 0; j < pointsOfInterest.length; j++) {
     // trim last characters from the card ID to get the pure restaurant name
-    let cardId = leftmostCard.card.id.slice(0, -5);
+    let cardId = activeCard.id.slice(0, -5);
     // Get POI ID as a property of the element
     let pointOfInterestID = pointsOfInterest[j].id;
 
@@ -48,43 +48,34 @@ function matchCardsWithPins(leftmostCard) {
   }
 }
 
-function listenForLeftmostCard() {
-  // check current position of all cards on carousel scroll
-  let carousel = document.getElementsByClassName("carousel")[0];
-  carousel.addEventListener("scroll", () => {
-    // get card elements
-    let cards = document.getElementsByClassName("card");
+function listenForHover() {
+  let cards = document.getElementsByClassName("card");
 
-    // create array to hold the cards once they're turned into objects
-    let cardsArray = [];
+  // create loop of cards to listen for hover
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
 
-    // determine position of each card
-    for (let i = 0; i < cards.length; i++) {
-      let card = cards[i];
-      let cardDimensions = getElDimensions(card);
-      cardsArray.push({ card, cardDimensions });
-    }
+    card.addEventListener("mouseover", function () {
+      // bounce pin related to card
+      matchCardsWithPins(card);
 
-    // find the card which is the furthest left but still on screen
-    let leftmostCard = returnLeftmostCard(cardsArray);
+      // if leftmostCard already contains class "active-card"
+      if (card.classList.contains("active-card")) return;
 
-    // bounce pin related to card
-    matchCardsWithPins(leftmostCard);
-
-    // if leftmostCard already contains class "active-card"
-    if (leftmostCard.card.classList.contains("active-card")) return;
-
-    // if it doesn't yet have this class, remove from the previous card and add to the new card
-    // remove class "active-card" from all cards
-    removeClassFromElements(cardsArray, "active-card");
-    leftmostCard.card.classList.add("active-card");
-  });
+      // remove class from all other cards before re-assiging
+      for (let j = 0; j < cards.length; j++) {
+        // get card
+        let otherCard = cards[j];
+        // remove class "active-card" from all cards
+        otherCard.classList.remove("active-card");
+      }
+      card.classList.add("active-card");
+    });
+  }
 }
 
-function removeClassFromElements(elements, className) {
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].card.classList.remove(className);
-  }
+function removeClassFromElements(element, className) {
+  element.classList.remove(className);
 }
 
 function returnLeftmostCard(arrayOfObjs) {
