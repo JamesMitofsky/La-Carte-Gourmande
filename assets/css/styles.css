@@ -77,6 +77,8 @@ svg {
 
 .card.active-card h2 {
   text-decoration: underline pink 0.2em;
+  -webkit-text-decoration-line: underline; /* Safari */
+  -webkit-text-decoration-color: pink;
 }
 
 .open-map-app {
@@ -128,6 +130,8 @@ header h1 {
 
 header h2 {
   text-decoration: underline pink 0.15em;
+  -webkit-text-decoration-line: underline; /* Safari */
+  -webkit-text-decoration-color: pink;
   margin: 0;
 }
 
