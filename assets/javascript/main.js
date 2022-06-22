@@ -1,7 +1,7 @@
 main();
 
 function main() {
-  hideLoadingScreen();
+  // hideLoadingScreen();
   listenForCardsHover();
   createMapLink();
 }
@@ -40,6 +40,8 @@ function matchCardsWithPins(activeCard) {
 
     // return true if cardId and pointOfInterestId match
     if (cardId === pointOfInterestID) {
+      moveMapToPin(pointOfInterestID);
+
       // use relative distance to zoom in on pin
       // let relativeDistance = getRelativeDistanceOfPin(pointOfInterestID);
       let activePOIs = document.getElementsByClassName("active-POI");
@@ -47,6 +49,13 @@ function matchCardsWithPins(activeCard) {
       document.getElementById(pointOfInterestID).classList.add("active-POI");
     }
   }
+}
+
+function moveMapToPin(pointOfInterestID) {
+  let poiEl = document.getElementById(pointOfInterestID);
+  let center = findCenterOfElement(poiEl);
+
+  panToPin(center);
 }
 
 function listenForCardsHover() {

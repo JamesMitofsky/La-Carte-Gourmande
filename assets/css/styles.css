@@ -140,6 +140,10 @@ header h2 {
   transform: translateY(-100vh);
 }
 
+.actively-moving .svg-pan-zoom_viewport {
+  transition: transform 0.5s ease;
+}
+
 @media screen and (min-width: 500px) {
   :root {
     font-size: 17px;

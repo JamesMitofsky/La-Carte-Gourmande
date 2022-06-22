@@ -1,12 +1,23 @@
 function panToPin(relativeDistance) {
-  panZoom.center();
+  // get viewport element
+  // get svg which is child of element with id "container"
+  let svg = document.getElementById("container").children[0];
+  svg.classList.add("actively-moving");
 
-  panZoom.panBy({
-    x: relativeDistance.x,
-    y: relativeDistance.y,
-  });
+  panZoom.zoom(1);
+  panZoom.pan({ x: 0, y: 0 });
+  alert("finish zeroing");
 
-  panZoom.zoom(3);
+  // panZoom.pan({
+  //   x: relativeDistance.x,
+  //   y: relativeDistance.y,
+  // });
+
+  alert("finish panning");
+
+  setTimeout(() => {
+    svg.classList.remove("actively-moving");
+  }, "1000");
 }
 window.onload = function () {
   var eventsHandler;
