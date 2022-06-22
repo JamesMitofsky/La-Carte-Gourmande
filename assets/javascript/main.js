@@ -88,16 +88,6 @@ function removeClassFromElements(elements, className) {
   }
 }
 
-function returnLeftmostCard(arrayOfObjs) {
-  let res = arrayOfObjs.reduce(function (prev, current) {
-    return prev.cardDimensions.left < current.cardDimensions.left &&
-      prev.cardDimensions.left > -100
-      ? prev
-      : current;
-  });
-  return res;
-}
-
 function getRelativeDistanceOfPin(pointOfInterestID) {
   // return object of viewport dimensions
   let map = document.getElementsByClassName("svg-pan-zoom_viewport")[0];
@@ -128,37 +118,6 @@ function findCenterOfElement(el) {
     y: rect.top + rect.height / 2,
   };
   return center;
-}
-
-function isEllipsisActive() {
-  // get paragraph elements that are children of class ".card"
-  let cards = document.getElementsByClassName("card");
-
-  let allParagraphs = [];
-  // create for loop with cards
-  for (let i = 0; i < cards.length; i++) {
-    let card = cards[i];
-    // get paragraph elements that are children of class ".card"
-    let paragraphs = card.getElementsByTagName("p");
-
-    // convert HTML collections to an array
-    let parasArray = [...paragraphs];
-    allParagraphs.push(parasArray);
-  }
-  // flatten the now returned array
-  let flattenedParagraphs = allParagraphs.flat();
-
-  // loop through paragraphs
-  for (let i = 0; i < flattenedParagraphs.length; i++) {
-    // get paragraph element
-    let paragraph = flattenedParagraphs[i];
-    // test e.offsetWidth < e.scrollWidth;
-    ellipsisActive = paragraph.offsetWidth < paragraph.scrollWidth;
-    if (!ellipsisActive) continue;
-    // add class "read-more" to paragraph
-    paragraph.classList.add("read-more");
-    console.log("detected ellipsis on", paragraph);
-  }
 }
 
 function createMapLink() {
