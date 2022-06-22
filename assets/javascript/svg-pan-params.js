@@ -113,6 +113,8 @@ window.onload = function () {
     controlIconsEnabled: false,
     fit: 1,
     center: 1,
+    minZoom: 1,
+    maxZoom: 10,
     customEventsHandler: eventsHandler,
   });
 };
