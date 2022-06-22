@@ -54,9 +54,12 @@ main {
 
 .carousel {
   width: 100vw;
+  position: absolute;
+  bottom: 0;
+  overflow-x: scroll;
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
+  align-items: flex-end;
 }
 
 .card {
@@ -70,12 +73,13 @@ main {
   position: relative;
   min-width: 60vw;
   max-width: 40vw;
-  box-shadow: 1px 3px 3px rgb(61, 61, 61);
-  transition: all ease 0.5s;
+  box-shadow: 1px 2px 2px rgb(61 61 61 / 60%);
+  transition: all ease 0.2s;
 }
 
 .card.active-card {
-  box-shadow: 0px 0px 10px 0px orange;
+  box-shadow: 5px 11px 13px 0px rgb(0 0 0 / 60%);
+  height: 30vh;
 }
 
 .open-map-app {
@@ -148,7 +152,7 @@ header h2 {
 }
 
 .actively-moving .svg-pan-zoom_viewport {
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
 }
 
 @media screen and (min-width: 500px) {
