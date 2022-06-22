@@ -2,7 +2,7 @@ main();
 
 function main() {
   hideLoadingScreen();
-  listenForHover();
+  listenForCardsHover();
   createMapLink();
 }
 
@@ -48,30 +48,35 @@ function matchCardsWithPins(activeCard) {
   }
 }
 
-function listenForHover() {
+function listenForCardsHover() {
   let cards = document.getElementsByClassName("card");
 
   // create loop of cards to listen for hover
   for (let i = 0; i < cards.length; i++) {
     let card = cards[i];
 
-    card.addEventListener("mouseover", function () {
-      // bounce pin related to card
-      matchCardsWithPins(card);
-
-      // if leftmostCard already contains class "active-card"
-      if (card.classList.contains("active-card")) return;
-
-      // remove class from all other cards before re-assiging
-      for (let j = 0; j < cards.length; j++) {
-        // get card
-        let otherCard = cards[j];
-        // remove class "active-card" from all cards
-        otherCard.classList.remove("active-card");
-      }
-      card.classList.add("active-card");
-    });
+    highlightCardAndPin(card, "mouseover", cards);
+    highlightCardAndPin(card, "touchstart", cards);
   }
+}
+
+function highlightCardAndPin(card, eventName, cards) {
+  card.addEventListener(eventName, () => {
+    // bounce pin related to card
+    matchCardsWithPins(card);
+
+    // if leftmostCard already contains class "active-card"
+    if (card.classList.contains("active-card")) return;
+
+    // remove class from all other cards before re-assiging
+    for (let j = 0; j < cards.length; j++) {
+      // get card
+      let otherCard = cards[j];
+      // remove class "active-card" from all cards
+      otherCard.classList.remove("active-card");
+    }
+    card.classList.add("active-card");
+  });
 }
 
 function removeClassFromElements(element, className) {
