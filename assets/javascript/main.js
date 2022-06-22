@@ -62,17 +62,21 @@ function listenForCardsHover() {
 }
 
 function highlightCardAndPin(card, eventName, cards) {
-  card.addEventListener(eventName, () => {
-    // bounce pin related to card
-    matchCardsWithPins(card);
+  card.addEventListener(
+    eventName,
+    () => {
+      // bounce pin related to card
+      matchCardsWithPins(card);
 
-    // if leftmostCard already contains class "active-card"
-    if (card.classList.contains("active-card")) return;
+      // if leftmostCard already contains class "active-card"
+      if (card.classList.contains("active-card")) return;
 
-    // remove class from all other cards before re-assiging
-    removeClassFromElements(cards, "active-card");
-    card.classList.add("active-card");
-  });
+      // remove class from all other cards before re-assiging
+      removeClassFromElements(cards, "active-card");
+      card.classList.add("active-card");
+    },
+    { passive: true }
+  );
 }
 
 function removeClassFromElements(elements, className) {
