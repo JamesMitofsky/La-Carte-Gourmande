@@ -1,6 +1,6 @@
 // start all children of loading page as out of place
 #loading svg path,
-header * {
+.loading-header * {
   opacity: 0;
   transform: translateY(-5em);
 }
@@ -25,7 +25,7 @@ header * {
 }
 
 @for $i from 1 through 2 {
-  header *:nth-child(#{$i}) {
+  .loading-header *:nth-child(#{$i}) {
     animation: animateIn 1.5s ease forwards;
     animation-delay: #{$i * 0.3}s;
     transform-origin: center;
