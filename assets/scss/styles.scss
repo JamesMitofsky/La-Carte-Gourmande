@@ -28,12 +28,17 @@ main {
   width: 100vw;
   z-index: 1;
   text-align: left;
-  padding: 0.2em 0.4em;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  * {
+    margin: 0.2em;
+  }
+  svg {
+    height: 2.5em;
+  }
 }
 
 .hero-nav {
