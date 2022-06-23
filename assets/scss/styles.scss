@@ -1,5 +1,6 @@
 :root {
-  --main-theme: #f8e3d1;
+  --main-theme: #f1dfdf;
+  --main-theme-transparent-dark: rgb(178 118 129 / 63%);
   --border-radius: 0.3em;
   --secondary-theme: lightcyan;
   --tertiary-theme: #f15e26;
@@ -22,8 +23,8 @@ main {
 
 .hero-wrapper {
   position: fixed;
-  background-color: beige;
-  box-shadow: 0.5px 1.8px 5px #daa1707d;
+  background-color: var(--main-theme);
+  box-shadow: 1px 3px 14px var(--main-theme-transparent-dark);
   width: 100vw;
   z-index: 1;
   text-align: left;
@@ -202,14 +203,14 @@ header {
 
 .loading-header h1 {
   font-size: 4em;
-  color: pink;
+  color: var(--main-theme);
   filter: drop-shadow(0.5px 1.8px 1.3px #9d1d33);
 }
 
 header h2 {
-  text-decoration: underline pink 0.15em;
+  text-decoration: underline var(--main-theme) 0.15em;
   -webkit-text-decoration-line: underline; /* Safari */
-  -webkit-text-decoration-color: pink;
+  -webkit-text-decoration-color: var(--main-theme);
   margin: 0;
 }
 
