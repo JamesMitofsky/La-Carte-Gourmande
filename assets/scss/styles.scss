@@ -303,7 +303,7 @@ dialog::backdrop {
 /* animate body's background color to change from blue to beige */
 body,
 html {
-  background-color: var(--secondary-theme);
+  background-color: var(--main-theme);
   animation: change-color 5.05s ease;
 }
 
