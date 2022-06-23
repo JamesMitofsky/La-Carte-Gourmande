@@ -82,7 +82,9 @@ svg {
 }
 
 .circle {
-  background: var(--tertiary-theme);
+  /* background: var(--tertiary-theme); */
+  /* background-color: none; */
+  border: 2px solid var(--tertiary-theme);
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -105,6 +107,11 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.active-card .circle {
+  background: var(--tertiary-theme);
+  border: 2px solid transparent;
   color: white;
 }
 
