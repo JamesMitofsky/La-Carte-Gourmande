@@ -2,6 +2,7 @@
   --main-theme: #f8e3d1;
   --border-radius: 0.3em;
   --secondary-theme: lightcyan;
+  --tertiary-theme: #f15e26;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
   font-size: 14px;
@@ -77,15 +78,11 @@ svg {
 }
 
 .active-card .card-title {
-  color: orange;
-}
-
-.active-card .circle {
-  color: white;
+  color: var(--tertiary-theme);
 }
 
 .circle {
-  background: orange;
+  background: var(--tertiary-theme);
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -98,7 +95,7 @@ svg {
   height: fit-content;
 }
 
-.circle .card-number {
+.card-number {
   padding: 50%;
   margin: -3em -50% 0;
   position: relative;
@@ -108,6 +105,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .card {
@@ -125,9 +123,8 @@ svg {
   transition: all ease 0.2s;
 }
 
-.card.active-card {
+.active-card {
   box-shadow: 5px 11px 13px 0px rgb(0 0 0 / 60%);
-  /* height: 30vh; */
 }
 .card:hover {
   cursor: pointer;
@@ -156,7 +153,7 @@ svg {
   right: 0;
   bottom: 0;
   margin: 0.5em;
-  background-color: #f15e26;
+  background-color: var(--tertiary-theme);
   color: white;
   padding: 0.5em;
   border-radius: var(--border-radius);
