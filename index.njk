@@ -8,10 +8,13 @@ title: Home
     <h1>La Carte Gourmande</h1>
     <h2>10 adresses pour se régaler à Caen</h2>
   </header>
-  {% include "hero-image.svg" %}
+  {% include "loading.svg" %}
 </section>
 <main>
-  <header class="project-title">La Carte Gourmande</header>
+  <header class="hero-wrapper">
+    <div class="hero-title">La Carte Gourmande</div>
+    <nav id="info-btn" class="hero-nav">{% include "info.svg" %}</nav>
+  </header>
   <div aria-hidden="true" id="container">{% include "map.svg" %}</div>
 
   <section class="carousel">
@@ -36,3 +39,12 @@ title: Home
     {%- endfor -%}
   </section>
 </main>
+
+<dialog id="dialog">
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <header>dialog test</header>
+      <button id="close-dialog">Close</button>
+    </div>
+  </div>
+</dialog>
