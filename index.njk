@@ -47,13 +47,17 @@ title: Home
     </div>
     {%- for contributor in collections.contributors -%}
     <div class="contributor">
-      <div class="contributor-header">
-      <h3>{{ contributor.data.designerName }}</h3>
+        <img
+        class="profile-picture"
+        src="{{ contributor.data.profilePicture }}"
+        alt="Profile picture of {{ contributor.data.designerName }}"
+        />
+      <h2>{{ contributor.data.businessName }}</h2>
         <a target="_blank" href="{{ contributor.data.website }}">
-          <subtitle>{{ contributor.data.businessName }}</subtitle></a
+        <subtitle>Commencez avec {{ contributor.data.designerName }} maintenant!</subtitle></a
         >
-      </div>
       <p>{{ contributor.data.summary }}</p>
+      </div>
     </div>
     {%- endfor -%}
     <button class="btn" id="close-dialog">Retourner</button>

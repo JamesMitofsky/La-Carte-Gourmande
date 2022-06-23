@@ -249,19 +249,25 @@ dialog::backdrop {
   background: rgba(255, 255, 255, 0);
 }
 
-.contributor h3 {
-  margin: 0;
-  color: var(--tertiary-theme);
-}
-
-.contributor-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contributor p {
-  margin: 0;
-  margin-bottom: 2em;
+.contributor {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: 0.5em;
+  margin: 1em 0;
+  h2 {
+    margin: 0;
+  }
+  .profile-picture {
+    grid-column: 1;
+    grid-row: 1/5;
+    height: 9em;
+    width: auto;
+    border-radius: 50%;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 2em;
+  }
 }
 
 .active-dialog {
