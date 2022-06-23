@@ -2,6 +2,7 @@
   --main-theme: #f8e3d1;
   --border-radius: 0.3em;
   --secondary-theme: lightcyan;
+  --tertiary-theme: #f15e26;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
   font-size: 14px;
@@ -11,39 +12,26 @@ html,
 body {
   margin: 0;
   height: 100%;
+  background-color: beige;
+}
+
+main {
   background-color: var(--secondary-theme);
   height: 100%;
 }
 
-main {
-  height: 100%;
-}
-
-.project-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+.project-title {
   font-size: 4em;
   position: fixed;
   background-color: beige;
   box-shadow: 0.5px 1.8px 5px #daa1707d;
   width: 100vw;
-  font-size: 1em;
+  font-size: 2.7em;
   padding: 0.2em 0;
   z-index: 1;
-  text-align: left;
-  padding: 0 0.5em;
-  box-sizing: border-box;
-}
-
-.project-info nav:hover {
-  cursor: pointer;
 }
 
 svg {
-  width: 100%;
-  height: 100%;
   filter: drop-shadow(0.5px 1.8px 1.3px #d8b08d);
 }
 
@@ -71,9 +59,10 @@ svg {
 }
 
 .carousel {
+  width: 100vw;
   position: absolute;
   bottom: 0;
-  width: 100vw;
+  overflow-x: scroll;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -109,7 +98,7 @@ svg {
   height: fit-content;
 }
 
-.circle-content {
+.card-number {
   padding: 50%;
   margin: -3em -50% 0;
   position: relative;
@@ -138,33 +127,19 @@ svg {
   position: relative;
   min-width: 60vw;
   max-width: 40vw;
-  box-shadow: 1px 3px 3px rgb(61, 61, 61);
-  transition: all ease 0.5s;
+  box-shadow: 1px 2px 2px rgb(61 61 61 / 60%);
+  transition: all ease 0.2s;
 }
 
-.card.active-card {
-  box-shadow: 0px 0px 10px 0px orange;
+.active-card {
+  box-shadow: 5px 11px 13px 0px rgb(0 0 0 / 60%);
 }
-
-.open-map-app {
-  position: absolute;
-  text-decoration: none;
-  right: 0;
-  bottom: 0;
-  margin: 0.5em;
-  background-color: #f15e26;
-  color: white;
-  padding: 0.5em;
-  border-radius: var(--border-radius);
-  filter: drop-shadow(1px 2px 2px grey);
-}
-
 .card:hover {
   cursor: pointer;
 }
 
 /* white fade rising from bottom of cards */
-.card::before {
+.card:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -178,6 +153,19 @@ svg {
     rgba(255, 255, 255, 0.588) 50%,
     rgb(255 255 255) 100%
   );
+}
+
+.open-map-app {
+  position: absolute;
+  text-decoration: none;
+  right: 0;
+  bottom: 0;
+  margin: 0.5em;
+  background-color: var(--tertiary-theme);
+  color: white;
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+  filter: drop-shadow(1px 2px 2px grey);
 }
 
 .leftmost-card {
@@ -196,6 +184,8 @@ header {
 
 header h2 {
   text-decoration: underline pink 0.15em;
+  -webkit-text-decoration-line: underline; /* Safari */
+  -webkit-text-decoration-color: pink;
   margin: 0;
 }
 

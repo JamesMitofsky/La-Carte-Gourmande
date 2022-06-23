@@ -3,20 +3,15 @@ layout: default
 title: Home
 ---
 
-{#
-<section aria-hidden="true" id="loading">
-  <header class="loading-header">
+<section id="loading">
+  <header>
     <h1>La Carte Gourmande</h1>
     <h2>10 adresses pour se régaler à Caen</h2>
   </header>
   {% include "hero-image.svg" %}
 </section>
-#}
 <main>
-  <header class="project-info">
-    <h1>La Carte Gourmande</h1>
-    <nav>{% include "info.svg" %}</nav>
-  </header>
+  <header class="project-title">La Carte Gourmande</header>
   <div aria-hidden="true" id="container">{% include "map.svg" %}</div>
 
   <section class="carousel">
@@ -24,9 +19,7 @@ title: Home
     <div class="card" id="{{ card.data.cssID }}-card">
       <h2 class="card-title-wrapper">
         <span class="circle"
-          ><span class="card-number circle-content">{{
-            card.data.number
-          }}</span></span
+          ><span class="card-number">{{ card.data.number }}</span></span
         >
         <span class="card-title"> {{ card.data.title }}</span>
       </h2>
@@ -43,10 +36,3 @@ title: Home
     {%- endfor -%}
   </section>
 </main>
-<dialog>
-  I'm a dialog!
-  <!-- This renders a "Close" button that will
-        close the dialog when it is clicked. -->
-
-  <button id="close-dialog">Close</button>
-</dialog>

@@ -1,21 +1,18 @@
-function testingMath(poiEl) {
-  showNode(poiEl);
-  function showNode(node) {
-    const bbox = node.getBBox();
+function showNode(node) {
+  const bbox = node.getBBox();
 
-    // pan so the node is at the center
-    const { width, height, realZoom } = panZoom.getSizes();
-    panZoom.pan({
-      x: -realZoom * (bbox.x - width / (realZoom * 2) + bbox.width / 2),
-      y: -realZoom * (bbox.y - height / (realZoom * 2) + bbox.height / 2),
-    });
+  // pan so the node is at the center
+  const { width, height, realZoom } = panZoom.getSizes();
+  panZoom.pan({
+    x: -realZoom * (bbox.x - width / (realZoom * 2) + bbox.width / 2),
+    y: -realZoom * (bbox.y - height / (realZoom * 2) + bbox.height / 2),
+  });
 
-    // we want to zoom in to see just around the node -
-    const relativeZoom = panZoom.getZoom();
-    // this formula below could be improved... I found it worked nicely for my usecases but maybe it should controlled by a 2nd parameter to this function
-    const desiredWidth = 50 * Math.sqrt(bbox.width / 25) * 11 * realZoom;
-    panZoom.zoom((relativeZoom * width) / desiredWidth);
-  }
+  // we want to zoom in to see just around the node -
+  const relativeZoom = panZoom.getZoom();
+  // this formula below could be improved... I found it worked nicely for my usecases but maybe it should controlled by a 2nd parameter to this function
+  const desiredWidth = 50 * Math.sqrt(bbox.width / 25) * 11 * realZoom;
+  panZoom.zoom((relativeZoom * width) / desiredWidth);
 }
 
 function panToPin(poiEl) {
@@ -26,11 +23,7 @@ function panToPin(poiEl) {
 
   panZoom.center();
 
-  testingMath(poiEl);
-
-  // setTimeout(() => {
-  //   svg.classList.remove("actively-moving");
-  // }, "1000");
+  showNode(poiEl);
 }
 window.onload = function () {
   var eventsHandler;
@@ -113,6 +106,9 @@ window.onload = function () {
     controlIconsEnabled: false,
     fit: 1,
     center: 1,
+    minZoom: 1,
+    maxZoom: 10,
+    // zoomScaleSensitivity: 0.8,
     customEventsHandler: eventsHandler,
   });
 };
