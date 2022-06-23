@@ -12,10 +12,11 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background-color: var(--secondary-theme);
+  background-color: beige;
 }
 
 main {
+  background-color: var(--secondary-theme);
   height: 100%;
 }
 
