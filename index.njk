@@ -14,7 +14,7 @@ title: Home
   <div aria-hidden="true" id="container">{% include "map.svg" %}</div>
 
   <section class="carousel">
-    {%- for card in collections.cards -%}
+    {%- for card in collections.sortOrder -%}
     <div class="card" id="{{ card.data.cssID }}-card">
       <h2 id="card-hero-txt">{{ card.data.title }}</h2>
       <a
