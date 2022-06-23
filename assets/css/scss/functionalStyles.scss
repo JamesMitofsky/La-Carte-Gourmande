@@ -1,3 +1,22 @@
+// change background color to match topmost element for more immersive experience on mobiles with a notch
+/* animate body's background color to change from blue to beige */
+body,
+html {
+  background-color: lightcyan;
+  animation: change-color 5s ease;
+}
+
+// creat change color animation
+@keyframes change-color {
+  0% {
+    background-color: var(--secondary-theme);
+  }
+  100% {
+    background-color: beige;
+  }
+}
+
+// looped function to animate in the paths of the SVG piece by piece
 // start all children of loading page as out of place
 #loading svg path,
 .loading-header * {

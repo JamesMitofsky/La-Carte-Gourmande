@@ -44,7 +44,7 @@ function hideLoadingScreen() {
         // get element with id "loading"
         let loading = document.getElementById("loading");
         hideElement(loading);
-      }, "5300");
+      }, "5000");
     },
     false
   );
