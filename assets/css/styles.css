@@ -18,6 +18,16 @@ main {
   height: 100%;
 }
 
+.project-title {
+  font-size: 4em;
+  position: fixed;
+  background-color: beige;
+  box-shadow: 0.5px 1.8px 5px #daa1707d;
+  width: 100vw;
+  font-size: 2.7em;
+  padding: 0.2em 0;
+}
+
 svg {
   filter: drop-shadow(0.5px 1.8px 1.3px #d8b08d);
 }
