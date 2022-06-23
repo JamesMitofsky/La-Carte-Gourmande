@@ -3,14 +3,15 @@
 body,
 html {
   background-color: beige;
-  animation: change-color 500ms ease alternate;
-  animation-iteration-count: 20;
-  animation-delay: 4500ms;
+  animation: change-color 5.05s ease;
 }
 
 // creat change color animation
 @keyframes change-color {
   0% {
+    background-color: #e0ffff;
+  }
+  99% {
     background-color: #e0ffff;
   }
   100% {
