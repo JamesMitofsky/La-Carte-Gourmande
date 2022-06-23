@@ -4,6 +4,34 @@ function main() {
   // hideLoadingScreen();
   listenForCardsHover();
   createMapLink();
+  listenForDialog();
+}
+
+function listenForDialog() {
+  // get element with id "info-btn"
+  let infoBtn = document.getElementById("info-btn");
+  // get dialog element by tag
+  let dialog = document.getElementsByTagName("dialog")[0];
+
+  // listen for click event
+  infoBtn.addEventListener("click", () => {
+    // open HTML dialog
+    dialog.showModal();
+    // add the class active-dialog to the dialog element
+    dialog.classList.add("active-dialog");
+  });
+
+  // listen for click event on dialog close button
+  document.getElementById("close-dialog").addEventListener("click", () => {
+    // remove class active-dialog from dialog element
+    dialog.classList.remove("active-dialog");
+
+    // delayed to match duration of CSS animation, smoothing the transition
+    setTimeout(() => {
+      // close dialog
+      dialog.close();
+    }, "500");
+  });
 }
 
 function hideLoadingScreen() {

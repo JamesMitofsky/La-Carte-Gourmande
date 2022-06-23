@@ -9,3 +9,11 @@
 ### Apply border style to SVG paths
 
 - https://stackoverflow.com/a/18330345/5395435
+
+## HTML Dialogs
+
+- https://css-tricks.com/replace-javascript-dialogs-html-dialog-element/
+
+## svgPanZoom Library
+
+### Moving to Node

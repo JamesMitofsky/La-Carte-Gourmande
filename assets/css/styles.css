@@ -12,6 +12,33 @@ body {
   margin: 0;
   height: 100%;
   background-color: var(--secondary-theme);
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 4em;
+  position: fixed;
+  background-color: beige;
+  box-shadow: 0.5px 1.8px 5px #daa1707d;
+  width: 100vw;
+  font-size: 1em;
+  padding: 0.2em 0;
+  z-index: 1;
+  text-align: left;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+}
+
+.project-info nav:hover {
+  cursor: pointer;
 }
 
 svg {
@@ -49,7 +76,55 @@ svg {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
+  align-items: flex-end;
+}
+
+.card-title-wrapper {
+  display: flex;
+  margin: 0;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+}
+
+.active-card .card-title {
+  color: var(--tertiary-theme);
+}
+
+.circle {
+  /* background: var(--tertiary-theme); */
+  /* background-color: none; */
+  border: 2px solid var(--tertiary-theme);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  overflow: hidden;
+  font-size: 0.7em;
+  margin-right: 0.2em;
+  height: fit-content;
+}
+
+.circle-content {
+  padding: 50%;
+  margin: -3em -50% 0;
+  position: relative;
+  top: 1.5em;
+  border: 1em solid transparent;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-card .circle {
+  background: var(--tertiary-theme);
+  border: 2px solid transparent;
+  color: white;
 }
 
 .card {
@@ -88,7 +163,8 @@ svg {
   cursor: pointer;
 }
 
-.card:before {
+/* white fade rising from bottom of cards */
+.card::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -112,7 +188,7 @@ header {
   text-align: center;
 }
 
-header h1 {
+.loading-header h1 {
   font-size: 4em;
   color: pink;
   filter: drop-shadow(0.5px 1.8px 1.3px #9d1d33);
@@ -144,11 +220,34 @@ header h2 {
   transition: transform 0.5s ease;
 }
 
+dialog {
+  height: 80vh;
+  width: 90vw;
+  border-radius: var(--border-radius);
+  border: none;
+  transform: translateY(-100vh);
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+dialog::backdrop {
+  background: rgba(255, 255, 255, 0);
+}
+
+.active-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.active-dialog::backdrop {
+  background: rgb(75 59 40 / 63%);
+}
+
 @media screen and (min-width: 500px) {
   :root {
     font-size: 17px;
   }
-  h1 {
+  .loading-header h1 {
     width: fit-content;
     border-bottom-right-radius: var(--border-radius);
   }
