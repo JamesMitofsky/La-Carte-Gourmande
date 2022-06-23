@@ -2,7 +2,8 @@
 title: Abuelo
 tags: cards
 address: 75 Rue de l'Oratoire, 14000 Caen
-social-media-link: instagram.com
+instagramHandle: abuelocaen
+facebookHandle: AbueloCaen
 number: 3
 cssID: abuelo
 lang: fr

@@ -2,10 +2,11 @@
 title: La Belle Equipe
 tags: cards
 address: 203 Rue Saint-Jean, 14000 Caen
-social-media-link: instagram.com
+facebookHandle: jeremylabelleequipe
+instagramHandle: belleequipecaen
 number: 6
 cssID: la-belle-equipe
 lang: fr
 description: >
-    C'est le bistro de quartier! Accueil convivial et cuisine maison, avec des bons produits de saison. On se régale.
+  C'est le bistro de quartier! Accueil convivial et cuisine maison, avec des bons produits de saison. On se régale.
 ---

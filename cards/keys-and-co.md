@@ -2,7 +2,9 @@
 title: Keys & Co
 tags: cards
 address: à venir Caen
-social-media-link: test
+website: https://www.keysandcocafe.com/
+facebookHandle: keyscoffeeco
+instagramHandle: keysandco
 number: 10
 cssID: keys-and-co
 lang: fr
