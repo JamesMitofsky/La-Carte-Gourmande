@@ -3,8 +3,9 @@
 body,
 html {
   background-color: beige;
-  animation: change-color 0.1s ease;
-  animation-delay: 4.9s;
+  animation: change-color 500ms ease alternate;
+  animation-iteration-count: 20;
+  animation-delay: 4500ms;
 }
 
 // creat change color animation
