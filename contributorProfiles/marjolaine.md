@@ -1,6 +1,6 @@
 ---
 tags: contributors
-businessName: DÉSIGRAPHE
+businessName: Désigraphe
 designerName: Marjolaine
 profession: Illustratrice
 website: www.desigraphe.com

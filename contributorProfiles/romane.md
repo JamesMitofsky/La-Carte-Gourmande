@@ -1,6 +1,6 @@
 ---
 tags: contributors
-businessName: BALTHAZAR
+businessName: Balthazar
 designerName: Romane
 profession: Agence de communication
 website: www.balthazar-agence.fr
