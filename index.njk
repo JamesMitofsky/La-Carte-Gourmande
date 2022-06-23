@@ -27,7 +27,7 @@ title: Home
         <span class="card-title"> {{ card.data.title }}</span>
       </h2>
       <a
-        class="open-map-app"
+        class="open-map-app btn"
         target="_blank"
         data-restaurant-name="{{ card.data.title }}"
         onClick="createMapLink()"
@@ -46,12 +46,16 @@ title: Home
       <header><h1>Les Contributors</h1></header>
     </div>
     {%- for contributor in collections.contributors -%}
-
     <div class="contributor">
+      <div class="contributor-header">
       <h3>{{ contributor.data.designerName }}</h3>
+        <a href="{{ contributor.data.website }}">
+          <subtitle>{{ contributor.data.businessName }}</subtitle></a
+        >
+      </div>
       <p>{{ contributor.data.summary }}</p>
     </div>
     {%- endfor -%}
-    <button id="close-dialog">Retourner</button>
+    <button class="btn" id="close-dialog">Retourner</button>
   </div>
 </dialog>

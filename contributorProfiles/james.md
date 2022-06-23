@@ -1,6 +1,6 @@
 ---
 tags: contributors
-business-name: Web Design by James
+businessName: Web Design by James
 designerName: James Tedesco
 profession: UX Website Developer
 website: https://JamesTedesco.me
