@@ -55,6 +55,46 @@ svg {
   align-items: flex-end;
 }
 
+.card-title-wrapper {
+  display: flex;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+}
+
+.active-card .card-title {
+  color: orange;
+}
+
+.active-card .circle {
+  color: white;
+}
+
+.circle {
+  background: orange;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  overflow: hidden;
+  font-size: 0.7em;
+  margin-right: 0.2em;
+}
+
+.circle .card-number {
+  display: block;
+  padding: 50%;
+  margin: -3em -50% 0;
+  position: relative;
+  top: 1.5em;
+  border: 1em solid transparent;
+  white-space: nowrap;
+}
+
 .card {
   padding: 1em;
   margin: 0.5em;
@@ -74,30 +114,11 @@ svg {
   box-shadow: 5px 11px 13px 0px rgb(0 0 0 / 60%);
   /* height: 30vh; */
 }
-
-.card.active-card h2 {
-  text-decoration: underline pink 0.2em;
-  -webkit-text-decoration-line: underline; /* Safari */
-  -webkit-text-decoration-color: pink;
-}
-
-.open-map-app {
-  position: absolute;
-  text-decoration: none;
-  right: 0;
-  bottom: 0;
-  margin: 0.5em;
-  background-color: #f15e26;
-  color: white;
-  padding: 0.5em;
-  border-radius: var(--border-radius);
-  filter: drop-shadow(1px 2px 2px grey);
-}
-
 .card:hover {
   cursor: pointer;
 }
 
+/* white fade rising from bottom of cards */
 .card:before {
   content: "";
   position: absolute;
@@ -112,6 +133,19 @@ svg {
     rgba(255, 255, 255, 0.588) 50%,
     rgb(255 255 255) 100%
   );
+}
+
+.open-map-app {
+  position: absolute;
+  text-decoration: none;
+  right: 0;
+  bottom: 0;
+  margin: 0.5em;
+  background-color: #f15e26;
+  color: white;
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+  filter: drop-shadow(1px 2px 2px grey);
 }
 
 .leftmost-card {
