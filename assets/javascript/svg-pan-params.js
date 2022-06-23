@@ -21,9 +21,12 @@ function panToPin(poiEl) {
   let svg = document.getElementById("container").children[0];
   svg.classList.add("actively-moving");
 
-  panZoom.center();
-
   showNode(poiEl);
+
+  // create half second delay
+  setTimeout(function () {
+    svg.classList.remove("actively-moving");
+  }, 500);
 }
 window.onload = function () {
   var eventsHandler;
