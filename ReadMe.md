@@ -17,3 +17,9 @@
 ## svgPanZoom Library
 
 ### Moving to Node
+
+## CSS
+
+### Circular element with unknown height
+
+- http://jsfiddle.net/y4Ede/90/
