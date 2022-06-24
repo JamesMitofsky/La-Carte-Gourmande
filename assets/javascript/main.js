@@ -44,6 +44,9 @@ function hideLoadingScreen() {
         // get element with id "loading"
         let loading = document.getElementById("loading");
         hideElement(loading);
+        // add class ".update-loading-color" to body and html elements
+        document.body.classList.add("update-loading-color");
+        document.documentElement.classList.add("update-loading-color");
       }, "5000");
     },
     false
