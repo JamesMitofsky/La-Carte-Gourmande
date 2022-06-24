@@ -187,7 +187,7 @@ svg {
   color: white;
   padding: 0.5em;
   border-radius: var(--border-radius);
-  filter: drop-shadow(1px 2px 2px grey);
+  filter: drop-shadow(2px 3px 3px grey);
   border: none;
   transition: all 0.2s ease;
 }
@@ -247,6 +247,11 @@ dialog {
   transform: translateY(-100vh);
   opacity: 0;
   transition: all ease 0.5s;
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 dialog::backdrop {
@@ -288,7 +293,7 @@ dialog::backdrop {
 
 #close-dialog {
   display: flex;
-  margin-left: auto;
+  margin: 1em;
   padding: 0.6em;
   font-size: 1.1em;
 }
