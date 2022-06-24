@@ -6,6 +6,7 @@ profession: UX Website Developer
 website: https://JamesTedesco.me
 profilePicture: /assets/photos/profile-pictures/james.webp
 social-media-handle:
+date: 2023-01-01
 summary: >
   James est un développeur de site Web axé sur l’expérience utilisateur. Ayant déménagé ici depuis les États-Unis, c’est sa passion de créer des expériences uniques pour sa communauté locale, et il est disponible pour collaborer avec les entreprises locales!
 lang: fr
