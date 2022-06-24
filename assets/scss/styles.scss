@@ -146,12 +146,13 @@ svg {
   position: relative;
   min-width: 60vw;
   max-width: 40vw;
-  box-shadow: 1px 2px 2px rgb(61 61 61 / 60%);
+  box-shadow: 2px 3px 5px 2px rgb(61 61 61 / 60%);
   transition: all ease 0.2s;
 }
 
 .active-card {
-  box-shadow: 5px 11px 13px 0px rgb(0 0 0 / 60%);
+  box-shadow: 10px 11px 14px 0px rgb(0 0 0 / 60%),
+    2px 3px 5px 2px rgb(61 61 61 / 60%);
 }
 .card:hover {
   cursor: pointer;
