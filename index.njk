@@ -11,9 +11,9 @@ title: Home
   {% include "loading.svg" %}
 </section>
 <main>
-  <header class="hero-wrapper">
+  <header id="info-btn"  class="hero-wrapper">
     <h1 class="hero-title">La Carte Gourmande</h1>
-    <nav id="info-btn" class="hero-nav">{% include "info.svg" %}</nav>
+    <nav class="hero-nav">{% include "info.svg" %}</nav>
   </header>
   <div aria-hidden="true" id="container">{% include "map.svg" %}</div>
 
@@ -45,8 +45,8 @@ title: Home
     <div class="dialog-header">
       <header><h1>Les Contributors</h1></header>
     </div>
-    {%- for contributor in collections.contributors -%}
-    <div class="contributor">
+      {%- for contributor in collections.contributors -%}
+      <div class="contributor">
         <img
         class="profile-picture"
         src="{{ contributor.data.profilePicture }}"
@@ -56,7 +56,7 @@ title: Home
         <a target="_blank" href="{{ contributor.data.website }}">
         <subtitle>Explorer le travail de {{contributor.data.designerName}}</subtitle></a
         >
-      <p>{{ contributor.data.summary }}</p>
+        <p>{{ contributor.data.summary }}</p>
       </div>
     </div>
     {%- endfor -%}

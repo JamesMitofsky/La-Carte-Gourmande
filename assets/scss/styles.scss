@@ -41,13 +41,13 @@ main {
   }
 }
 
+.hero-wrapper:hover {
+  cursor: pointer;
+}
+
 .hero-nav {
   display: flex;
   filter: drop-shadow(0.07em 0.12em 0.04em gray);
-}
-
-.hero-nav:hover {
-  cursor: pointer;
 }
 
 svg {
@@ -271,6 +271,9 @@ dialog::backdrop {
   p {
     margin: 0;
     margin-bottom: 2em;
+  }
+  a {
+    width: fit-content;
   }
 }
 
