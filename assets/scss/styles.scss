@@ -159,7 +159,7 @@ label div:nth-child(2) {
   }
   to {
     transform: translateY(0.3em);
-    fill: var(--main-theme-dark);
+    fill: var(--tertiary-theme);
     filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
   }
 }
