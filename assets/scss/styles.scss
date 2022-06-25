@@ -44,6 +44,9 @@ main {
     height: 2.5em;
     fill: white;
   }
+  .hero-title {
+    font-size: 1.6em;
+  }
 }
 
 .hero-wrapper:hover {
@@ -70,8 +73,20 @@ label {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 50px;
+  width: 40px;
   cursor: pointer;
+
+  div {
+    position: relative;
+    top: 0;
+    height: 4px;
+    background-color: #fff;
+    margin-bottom: 6px;
+    transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width,
+      0.3s ease right;
+    border-radius: 2px;
+  }
+
   * {
     box-shadow: 1px 2px 4px 0px #000000c7;
   }
@@ -88,29 +103,19 @@ label {
 //   transition: 1.2s cubic-bezier(0, 0.96, 1, 0.02) background-color;
 // }
 
-label div {
-  position: relative;
-  top: 0;
-  height: 7px;
-  background-color: #fff;
-  margin-bottom: 6px;
-  transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width,
-    0.3s ease right;
-  border-radius: 2px;
-}
-
 label div:last-child {
   margin-bottom: 0;
   transform-origin: 40px;
+  right: 0;
 }
 
 label div:first-child {
   transform-origin: 0;
+  right: 0;
 }
 
 label div:nth-child(2) {
-  right: 0;
-  width: 40px;
+  width: 30px;
 }
 
 // #menu_checkbox:checked + label:before {
