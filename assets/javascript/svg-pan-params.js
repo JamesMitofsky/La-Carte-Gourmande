@@ -109,9 +109,8 @@ window.onload = function () {
     controlIconsEnabled: false,
     fit: true,
     center: true,
-    minZoom: 0.5,
+    minZoom: 0.3,
     maxZoom: 9,
-    // zoomScaleSensitivity: 0.8,
     customEventsHandler: eventsHandler,
   });
 };
