@@ -24,12 +24,29 @@ title: Home
         <span class="card-title"> {{ card.data.title }}</span>
       </h2>
       <button
-        class="card-btn btn"
-        data-restaurant-name="{{ card.data.title }}"
-        onClick="openCardDetails(event)"
-        >Voir plus 🔍</button
+      class="card-btn btn"
+      data-restaurant-name="{{ card.data.title }}"
+      onClick="openCardDetails(event)"
+      >Voir plus 🔍</button
       >
       <p>{{ card.data.description }}</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="social-media-wrapper">
+        {% if card.data.instagramHandle %}
+          <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}">{% include "instagram.svg" %}</a>
+        {% endif %}
+        {% if card.data.facebookHandle %}
+          <a target="_blank" class="svg-link" href="https://www.facebook.com/{{ card.data.facebookHandle }}">{% include "facebook.svg" %}</a>
+        {% endif %}
+        {% if card.data.website %}
+          <a target="_blank" class="svg-link" href="{{ card.data.website }}">{% include "website.svg" %}</a>
+        {% endif %}
+      </div>
     </div>
     {%- endfor -%}
   </section>

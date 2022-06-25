@@ -163,17 +163,6 @@ label div:nth-child(2) {
   align-items: flex-end;
 }
 
-.card-title-wrapper {
-  display: flex;
-  margin: 0;
-}
-
-.card-title {
-  display: flex;
-  align-items: center;
-  font-size: 1.2em;
-}
-
 .active-card .card-title {
   color: var(--tertiary-theme);
 }
@@ -191,8 +180,6 @@ label div:nth-child(2) {
 }
 
 .circle {
-  /* background: var(--tertiary-theme); */
-  /* background-color: none; */
   border: 2px solid var(--tertiary-theme);
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -204,18 +191,6 @@ label div:nth-child(2) {
   font-size: 0.7em;
   margin-right: 0.2em;
   height: fit-content;
-}
-
-.card-number {
-  padding: 50%;
-  margin: -3em -50% 0;
-  position: relative;
-  top: 1.5em;
-  border: 1em solid transparent;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .active-card .circle {
@@ -237,6 +212,30 @@ label div:nth-child(2) {
   max-width: 40vw;
   box-shadow: 2px 3px 5px 2px rgb(61 61 61 / 60%);
   transition: all ease 0.4s;
+  .card-title-wrapper {
+    display: flex;
+    margin: 0;
+  }
+  .card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+  }
+  .card-number {
+    padding: 50%;
+    margin: -3em -50% 0;
+    position: relative;
+    top: 1.5em;
+    border: 1em solid transparent;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  svg {
+    height: 2em;
+    margin: 0.5em;
+  }
 }
 
 .active-card {
@@ -287,6 +286,10 @@ label div:nth-child(2) {
   filter: drop-shadow(1px 1px 1px grey);
   background-color: var(--tertiary-theme-dark);
   cursor: pointer;
+}
+
+.svg-link {
+  text-decoration: none;
 }
 
 .leftmost-card {
