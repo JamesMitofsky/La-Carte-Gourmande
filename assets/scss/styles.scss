@@ -34,8 +34,9 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  * {
-    margin: 0.4em;
+  padding: 0.9em;
+  > * {
+    margin: 0;
   }
 
   svg {
@@ -64,13 +65,11 @@ svg {
 }
 
 label {
-  top: 50%;
-  right: 0;
-  left: 0;
-  display: block;
-  width: 60px;
-  height: 60px;
-  margin: -30px auto 0 auto;
+  margin: 1em;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 50px;
   cursor: pointer;
 }
 
@@ -88,26 +87,26 @@ label {
 label div {
   position: relative;
   top: 0;
-  height: 12px;
+  height: 7px;
   background-color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width,
     0.3s ease right;
   border-radius: 2px;
+}
+
+label div:last-child {
+  margin-bottom: 0;
+  transform-origin: 40px;
 }
 
 label div:first-child {
   transform-origin: 0;
 }
 
-label div:last-child {
-  margin-bottom: 0;
-  transform-origin: 60px;
-}
-
 label div:nth-child(2) {
   right: 0;
-  width: 60px;
+  width: 40px;
 }
 
 // #menu_checkbox:checked + label:before {
@@ -390,7 +389,7 @@ dialog::backdrop {
   font-size: 1.1em;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 900px) {
   :root {
     font-size: 17px;
   }
