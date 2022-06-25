@@ -253,14 +253,15 @@ label div:nth-child(2) {
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 2.6em;
+  height: 4.6em;
+  z-index: 1;
   /* compensating for card padding */
   margin: 0 -1em;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.588) 50%,
-    rgb(255 255 255) 100%
+    rgb(255 255 255 / 0%) 0%,
+    rgb(255 255 255 / 65%) 50%,
+    rgb(255 255 255 / 81%) 100%
   );
 }
 
@@ -268,6 +269,7 @@ label div:nth-child(2) {
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 
 .btn {
