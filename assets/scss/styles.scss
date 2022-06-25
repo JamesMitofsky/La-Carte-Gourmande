@@ -179,10 +179,12 @@ label div:nth-child(2) {
 
 .card.selected-card {
   position: absolute;
-  bottom: 2vh;
-  left: 0vw;
-  height: 92vh;
-  width: 92vw;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
   max-width: fit-content;
   z-index: 1;
 }
