@@ -180,12 +180,12 @@ label div:nth-child(2) {
 
 .card.selected-card {
   position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  width: 100%;
+  bottom: 1vh;
+  left: 2vw;
+  height: 98vh;
+  margin: 0;
+  box-sizing: border-box;
+  width: 96vw;
   max-width: fit-content;
   z-index: 1;
 }
