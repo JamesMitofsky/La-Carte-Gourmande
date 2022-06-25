@@ -107,10 +107,10 @@ window.onload = function () {
   window.panZoom = svgPanZoom("#map-of-caen", {
     zoomEnabled: true,
     controlIconsEnabled: false,
-    fit: 1,
-    center: 1,
-    minZoom: 1,
-    maxZoom: 10,
+    fit: true,
+    center: true,
+    minZoom: 0.5,
+    maxZoom: 9,
     // zoomScaleSensitivity: 0.8,
     customEventsHandler: eventsHandler,
   });

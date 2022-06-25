@@ -23,3 +23,7 @@
 ### Circular element with unknown height
 
 - http://jsfiddle.net/y4Ede/90/
+
+## SVGs
+
+- Trim whitespace from SVG https://stackoverflow.com/a/53786013/5395435

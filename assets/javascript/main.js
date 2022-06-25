@@ -1,10 +1,18 @@
 main();
 
 function main() {
+  correctMapSize();
   hideLoadingScreen();
   listenForCardsHover();
   createMapLink();
   listenForDialog();
+}
+
+function correctMapSize() {
+  var svg = document.getElementById("map-of-caen");
+  var bbox = svg.getBBox();
+  var viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
+  svg.setAttribute("viewBox", viewBox);
 }
 
 function listenForDialog() {
