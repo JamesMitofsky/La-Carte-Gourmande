@@ -6,6 +6,24 @@ function main() {
   listenForDialog();
 }
 
+function openCardDetails(e) {
+  // check classes of parent element
+  // get parent element
+  let parentEl = e.target.parentElement;
+  let parentClasses = parentEl.classList;
+  if (parentClasses.contains("selected-card")) {
+    // now in leaving state, prepare for active state
+    e.target.textContent = "Voir plus 🔍";
+    parentEl.classList.remove("selected-card");
+  } else {
+    // add selected class to this button's parent card
+    parentEl.classList.add("selected-card");
+
+    // since now in active state, prepare for departing state
+    e.target.textContent = "Retour ⏎";
+  }
+}
+
 function listenForDialog() {
   // get element with id "info-btn"
   let infoBtn = document.getElementById("info-btn");

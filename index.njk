@@ -23,13 +23,11 @@ title: Home
         >
         <span class="card-title"> {{ card.data.title }}</span>
       </h2>
-      <a
-        class="open-map-app btn"
-        target="_blank"
+      <button
+        class="card-btn btn"
         data-restaurant-name="{{ card.data.title }}"
-        onClick="createMapLink()"
-        href=""
-        >Itinéraire</a
+        onClick="openCardDetails(event)"
+        >Voir plus 🔍</button
       >
       <p>{{ card.data.description }}</p>
     </div>

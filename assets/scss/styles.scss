@@ -177,6 +177,16 @@ label div:nth-child(2) {
   color: var(--tertiary-theme);
 }
 
+.card.selected-card {
+  position: absolute;
+  bottom: 2vh;
+  left: 0vw;
+  height: 92vh;
+  width: 92vw;
+  max-width: fit-content;
+  z-index: 1;
+}
+
 .circle {
   /* background: var(--tertiary-theme); */
   /* background-color: none; */
@@ -223,7 +233,7 @@ label div:nth-child(2) {
   min-width: 60vw;
   max-width: 40vw;
   box-shadow: 2px 3px 5px 2px rgb(61 61 61 / 60%);
-  transition: all ease 0.2s;
+  transition: all ease 0.4s;
 }
 
 .active-card {
@@ -251,7 +261,7 @@ label div:nth-child(2) {
   );
 }
 
-.open-map-app {
+.card-btn {
   position: absolute;
   right: 0;
   bottom: 0;
