@@ -51,25 +51,6 @@ function listenForDialog() {
   });
 }
 
-function hideLoadingScreen() {
-  // listen for DOM to render; infer that CSS loading animation begins when DOM renders
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-      // wait after content is loaded for CSS animations to complete
-      setTimeout(() => {
-        // get element with id "loading"
-        let loading = document.getElementById("loading");
-        hideElement(loading);
-        // add class ".update-loading-color" to body and html elements
-        document.body.classList.add("update-loading-color");
-        document.documentElement.classList.add("update-loading-color");
-      }, "5000");
-    },
-    false
-  );
-}
-
 function hideElement(el) {
   // add class .hidden to el
   el.classList.add("hidden");
