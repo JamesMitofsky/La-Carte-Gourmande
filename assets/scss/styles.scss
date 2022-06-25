@@ -72,6 +72,9 @@ label {
   flex-direction: column;
   width: 50px;
   cursor: pointer;
+  * {
+    box-shadow: 1px 2px 4px 0px #000000c7;
+  }
 }
 
 // label:before {
