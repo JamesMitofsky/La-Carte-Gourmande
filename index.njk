@@ -29,13 +29,8 @@ title: Home
       onClick="openCardDetails(event)"
       >Voir plus 🔍</button
       >
+      <img class="restaurant-preview" src="/assets/photos/restaurants/{{ card.data.cssID }}/preview.jpeg" alt="Preview image of {{ card.data.title }}">
       <p>{{ card.data.description }}</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
       <div class="social-media-wrapper">
         {% if card.data.instagramHandle %}
           <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}">{% include "instagram.svg" %}</a>

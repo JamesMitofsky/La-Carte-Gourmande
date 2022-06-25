@@ -205,7 +205,7 @@ label div:nth-child(2) {
   background: white;
   border-radius: var(--border-radius);
   flex: 1 1 0px;
-  height: 25vh;
+  height: 35vh;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
@@ -219,7 +219,7 @@ label div:nth-child(2) {
   .card-title {
     display: flex;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .card-number {
     padding: 50%;
@@ -235,6 +235,13 @@ label div:nth-child(2) {
   svg {
     height: 2em;
     margin: 0.5em;
+  }
+  .restaurant-preview {
+    width: -webkit-fill-available;
+    height: 8em;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-top: 0.5em;
   }
 }
 
