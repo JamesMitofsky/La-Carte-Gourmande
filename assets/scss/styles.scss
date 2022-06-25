@@ -171,6 +171,7 @@ label div:nth-child(2) {
 .card-title {
   display: flex;
   align-items: center;
+  font-size: 1.2em;
 }
 
 .active-card .card-title {
@@ -271,14 +272,15 @@ label div:nth-child(2) {
 
 .btn {
   text-decoration: none;
-  margin: 0.5em;
+  margin: 1em 0.7em;
   background-color: var(--tertiary-theme);
   color: white;
-  padding: 0.5em;
+  padding: 0.3em 0.5em;
   border-radius: var(--border-radius);
   filter: drop-shadow(2px 3px 3px grey);
   border: none;
   transition: all 0.2s ease;
+  font-size: 1.3em;
 }
 
 .btn:hover {
