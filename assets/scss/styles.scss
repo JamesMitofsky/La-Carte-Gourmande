@@ -1,9 +1,10 @@
 :root {
   --main-theme: #f7d1d1;
+  --main-theme-dark: #663838;
   --main-theme-transparent-dark: rgb(178 118 129 / 63%);
   --border-radius: 0.3em;
   --secondary-theme: #fffafa;
-  --tertiary-theme: #f15e26;
+  --tertiary-theme: #8ac1e5;
   --tertiary-theme-dark: #cd5b2f;
   --app-height: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +26,7 @@ main {
 }
 
 .hero-wrapper {
-  background-color: var(--tertiary-theme);
+  background-color: var(--main-theme-dark);
   color: white;
   box-shadow: 1px 3px 14px var(--main-theme-transparent-dark);
   width: 100vw;
@@ -153,12 +154,12 @@ label div:nth-child(2) {
 @keyframes bounce {
   from {
     transform: translateY(0);
-    fill: #f15e26;
+    fill: maroon;
     filter: drop-shadow(3px 3px 3px rgba(42, 42, 42, 0.4));
   }
   to {
     transform: translateY(0.3em);
-    fill: rgb(200, 77, 97);
+    fill: var(--main-theme-dark);
     filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
   }
 }
@@ -172,7 +173,7 @@ label div:nth-child(2) {
 }
 
 .active-card .card-title {
-  color: var(--tertiary-theme);
+  color: var(--main-theme-dark);
 }
 
 .card.selected-card {
@@ -188,7 +189,7 @@ label div:nth-child(2) {
 }
 
 .active-card .card-number {
-  background: var(--tertiary-theme);
+  background: var(--main-theme-dark);
   border: 2px solid transparent;
   color: white;
 }
@@ -220,11 +221,12 @@ label div:nth-child(2) {
     height: 1.4em;
     margin-right: 0.2em;
     aspect-ratio: 1/1;
-    border: 2px solid var(--tertiary-theme);
+    border: 2px solid var(--main-theme-dark);
     white-space: nowrap;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease;
   }
   svg {
     height: 2em;
