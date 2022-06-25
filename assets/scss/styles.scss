@@ -179,21 +179,7 @@ label div:nth-child(2) {
   z-index: 1;
 }
 
-.circle {
-  border: 2px solid var(--tertiary-theme);
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  display: inline-block;
-  text-align: center;
-  line-height: 1;
-  overflow: hidden;
-  font-size: 0.7em;
-  margin-right: 0.2em;
-  height: fit-content;
-}
-
-.active-card .circle {
+.active-card .card-number {
   background: var(--tertiary-theme);
   border: 2px solid transparent;
   color: white;
@@ -222,11 +208,11 @@ label div:nth-child(2) {
     font-size: 1em;
   }
   .card-number {
-    padding: 50%;
-    margin: -3em -50% 0;
-    position: relative;
-    top: 1.5em;
-    border: 1em solid transparent;
+    border-radius: 50%;
+    height: 1.4em;
+    margin-right: 0.2em;
+    aspect-ratio: 1/1;
+    border: 2px solid var(--tertiary-theme);
     white-space: nowrap;
     display: flex;
     justify-content: center;

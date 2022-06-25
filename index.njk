@@ -17,10 +17,7 @@ title: Home
   <section class="carousel">
     {%- for card in collections.sortOrder -%}
     <div class="card" id="{{ card.data.cssID }}-card">
-      <h2 class="card-title-wrapper">
-        <span class="circle"
-          ><span class="card-number">{{ card.data.number }}</span></span
-        >
+      <h2 class="card-title-wrapper"><span class="card-number">{{ card.data.number }}</span>
         <span class="card-title"> {{ card.data.title }}</span>
       </h2>
       <button
