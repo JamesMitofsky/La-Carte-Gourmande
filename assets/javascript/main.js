@@ -4,6 +4,7 @@ function main() {
   listenForCardsHover();
   createMapLink();
   listenForDialog();
+  listenForCardDetails();
   getAppHeight();
 }
 
@@ -16,21 +17,51 @@ function getAppHeight() {
   appHeight();
 }
 
+function listenForCardDetails() {
+  // get element with class "read-more"
+  let readMoreElements = document.getElementsByClassName("read-more");
+
+  // create loop of readMoreElements to listen for click
+  for (let i = 0; i < readMoreElements.length; i++) {
+    let readMore = readMoreElements[i];
+    readMore.addEventListener("click", function () {
+      // get child element of readmore
+      let readMoreChild = readMore.firstElementChild;
+
+      // get element with class "card"
+      let card = readMore.parentElement;
+
+      if (!card.classList.contains("selected-card")) {
+        // add class "active-card" to card
+        card.classList.add("selected-card");
+
+        // update text content of button
+        readMoreChild.textContent = "Retour ⏎";
+      } else {
+        card.classList.remove("selected-card");
+        readMoreChild.textContent = "Voir plus 🔍";
+      }
+    });
+  }
+}
+
 function openCardDetails(e) {
-  // check classes of parent element
-  // get parent element
-  let parentEl = e.target.parentElement;
+  // get parent element via returned event
+  let el = e.target;
+  let parentEl = el.parentElement;
   let parentClasses = parentEl.classList;
+
+  // if in leaving state, prepare for active state
   if (parentClasses.contains("selected-card")) {
-    // now in leaving state, prepare for active state
-    e.target.textContent = "Voir plus 🔍";
+    // update text of button
+    el.firstChild.textContent = "Voir plus 🔍";
     parentEl.classList.remove("selected-card");
   } else {
     // add selected class to this button's parent card
     parentEl.classList.add("selected-card");
 
     // since now in active state, prepare for departing state
-    e.target.textContent = "Retour ⏎";
+    el.firstChild.textContent = "Retour ⏎";
   }
 }
 

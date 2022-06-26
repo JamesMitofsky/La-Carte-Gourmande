@@ -1,11 +1,12 @@
 :root {
   --main-theme: #f7d1d1;
-  --main-theme-dark: #663838;
+  --main-theme-dark: maroon;
   --main-theme-transparent-dark: rgb(178 118 129 / 63%);
   --border-radius: 0.3em;
   --secondary-theme: #fffafa;
   --tertiary-theme: #8ac1e5;
   --tertiary-theme-dark: #cd5b2f;
+  --off-black: rgb(61, 61, 61);
   --app-height: 100%;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
@@ -26,7 +27,7 @@ main {
 }
 
 .hero-wrapper {
-  background-color: var(--main-theme-dark);
+  background-color: var(--main-theme);
   color: white;
   box-shadow: 1px 3px 14px var(--main-theme-transparent-dark);
   width: 100vw;
@@ -40,13 +41,13 @@ main {
   > * {
     margin: 0;
   }
-
   svg {
     height: 2.5em;
     fill: white;
   }
   .hero-title {
     font-size: 1.6em;
+    color: var(--off-black);
   }
 }
 
@@ -146,6 +147,10 @@ label div:nth-child(2) {
   flex: 1;
 }
 
+.POI {
+  fill: maroon;
+}
+
 .active-POI {
   animation: bounce 1s ease infinite alternate;
   filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
@@ -173,7 +178,8 @@ label div:nth-child(2) {
 }
 
 .active-card .card-title {
-  color: var(--main-theme-dark);
+  text-decoration: 0.2em underline;
+  text-decoration-color: var(--main-theme);
 }
 
 .card.selected-card {
@@ -186,12 +192,9 @@ label div:nth-child(2) {
   width: 96vw;
   max-width: fit-content;
   z-index: 2;
-}
-
-.active-card .card-number {
-  background: var(--main-theme-dark);
-  border: 2px solid transparent;
-  color: white;
+  .restaurant-preview {
+    height: 12em;
+  }
 }
 
 .card {
@@ -200,7 +203,7 @@ label div:nth-child(2) {
   background: white;
   border-radius: var(--border-radius);
   flex: 1 1 0px;
-  height: 35vh;
+  height: 29vh;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
@@ -215,13 +218,13 @@ label div:nth-child(2) {
     display: flex;
     align-items: center;
     font-size: 1em;
+    color: var(--);
   }
   .card-number {
     border-radius: 50%;
     height: 1.4em;
     margin-right: 0.2em;
     aspect-ratio: 1/1;
-    border: 2px solid var(--main-theme-dark);
     white-space: nowrap;
     display: flex;
     justify-content: center;
@@ -245,33 +248,51 @@ label div:nth-child(2) {
   box-shadow: 10px 11px 14px 0px rgb(0 0 0 / 60%),
     2px 3px 5px 2px rgb(61 61 61 / 60%);
 }
+
+.active-card .card-number {
+  background: var(--main-theme);
+}
+
 .card:hover {
   cursor: pointer;
 }
 
 /* white fade rising from bottom of cards */
-.card:before {
-  content: "";
+.read-more {
   position: absolute;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: 100%;
   bottom: 0;
-  height: 4.6em;
+  left: 0;
+  right: 0;
+  height: 7.6em;
   z-index: 1;
-  /* compensating for card padding */
-  margin: 0 -1em;
   background: linear-gradient(
     180deg,
-    rgb(255 255 255 / 0%) 0%,
-    rgb(255 255 255 / 65%) 50%,
-    rgb(255 255 255 / 81%) 100%
+    rgba(255, 255, 255, 0) 0%,
+    rgb(255 255 255 / 93%) 50%,
+    rgba(255, 255, 255, 0.9) 100%
   );
+  .card-btn {
+    bottom: 0;
+    z-index: 1;
+    margin-left: 68px;
+    color: #2791b4;
+    background: transparent;
+    text-decoration: underline;
+    margin: 1em 0.7em;
+    border: none;
+    transition: all 0.2s ease;
+    font-size: 1.4em;
+    filter: none;
+  }
 }
 
-.card-btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+.read-more:hover {
+  cursor: pointer;
 }
 
 .btn {
@@ -409,7 +430,7 @@ dialog::backdrop {
 /* animate body's background color to change from blue to beige */
 body,
 html {
-  background-color: var(--main-theme-dark);
+  background-color: var(--main-theme);
   transition: background-color 0.1s ease;
 }
 
