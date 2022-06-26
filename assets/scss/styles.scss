@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "WorkSansRegular";
+  src: url("/assets/fonts/WorkSans-Regular.ttf") format("truetype");
+}
+
 :root {
   --main-theme: #f7d1d1;
   --main-theme-dark: maroon;
@@ -8,7 +13,7 @@
   --tertiary-theme-dark: #108db7;
   --off-black: rgb(61, 61, 61);
   --app-height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "WorkSansRegular", Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
   font-size: 14px;
 }
