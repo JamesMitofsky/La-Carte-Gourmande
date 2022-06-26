@@ -179,7 +179,7 @@ label div:nth-child(2) {
 .active-card .card-title {
   text-decoration: 0.2em underline;
   text-decoration-color: var(--main-theme);
-  -webkit-text-decoration-line: line-through;
+  -webkit-text-decoration-line: underline;
   -webkit-text-decoration-color: var(--main-theme);
 }
 
