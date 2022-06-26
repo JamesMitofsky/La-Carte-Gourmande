@@ -181,6 +181,7 @@ label div:nth-child(2) {
   text-decoration-color: var(--main-theme);
   -webkit-text-decoration-line: underline;
   -webkit-text-decoration-color: var(--main-theme);
+  -webkit-text-decoration-thickness: 0.2em;
 }
 
 .card.selected-card {
