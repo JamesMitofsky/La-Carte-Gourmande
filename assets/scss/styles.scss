@@ -5,7 +5,7 @@
   --border-radius: 0.3em;
   --secondary-theme: #fffafa;
   --tertiary-theme: #8ac1e5;
-  --tertiary-theme-dark: #569cca;
+  --tertiary-theme-dark: #108db7;
   --off-black: rgb(61, 61, 61);
   --app-height: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -61,7 +61,7 @@ main {
 }
 
 svg {
-  filter: drop-shadow(0.5px 1.8px 1.3px #d8b08d);
+  filter: drop-shadow(0.5px 1px 1px #d8b08d);
 }
 
 // hamburger styles
@@ -147,24 +147,18 @@ label div:nth-child(2) {
   flex: 1;
 }
 
-.POI {
-  fill: maroon;
-}
-
 .active-POI {
-  animation: bounce 1s ease infinite alternate;
+  animation: colorsChange 1s ease infinite alternate;
   filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
 }
 
-@keyframes bounce {
+@keyframes colorsChange {
   from {
-    transform: translateY(0);
-    fill: maroon;
+    fill: #f15e26;
     filter: drop-shadow(3px 3px 3px rgba(42, 42, 42, 0.4));
   }
   to {
-    transform: translateY(0.3em);
-    fill: var(--tertiary-theme);
+    fill: #cd440d;
     filter: drop-shadow(1px 1px 1px rgba(42, 42, 42, 0.4));
   }
 }
