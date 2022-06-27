@@ -31,6 +31,11 @@ function detectCardOpenSwipe() {
       // open card details
       openCloseCard(card);
     });
+
+    mc.on("swipedown", function () {
+      // open card details
+      openCloseCard(card);
+    });
   }
 }
 
