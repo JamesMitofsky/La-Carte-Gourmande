@@ -7,7 +7,6 @@ function main() {
   listenForCardDetails();
   getAppHeight();
   listenToPOIs();
-<<<<<<< HEAD
   detectCardOpenSwipe();
 }
 
@@ -33,8 +32,6 @@ function detectCardOpenSwipe() {
       console.log(card);
     });
   }
-=======
->>>>>>> main
 }
 
 function scrollToCard(x) {
@@ -107,34 +104,14 @@ function listenForCardDetails() {
   for (let i = 0; i < readMoreElements.length; i++) {
     let readMore = readMoreElements[i];
     readMore.addEventListener("click", function () {
-<<<<<<< HEAD
       // get element with class "card"
       let card = readMore.parentElement;
       // open card details
       openCloseCard(card);
-=======
-      // get child element of readmore
-      let readMoreChild = readMore.firstElementChild;
-
-      // get element with class "card"
-      let card = readMore.parentElement;
-
-      if (!card.classList.contains("selected-card")) {
-        // add class "active-card" to card
-        card.classList.add("selected-card");
-
-        // update text content of button
-        readMoreChild.textContent = "Retour ⏎";
-      } else {
-        card.classList.remove("selected-card");
-        readMoreChild.textContent = "Voir plus 🔍";
-      }
->>>>>>> main
     });
   }
 }
 
-<<<<<<< HEAD
 function openCloseCard(card) {
   // get readmore element
   let readMore = card.getElementsByClassName("read-more")[0];
@@ -151,25 +128,6 @@ function openCloseCard(card) {
   } else {
     card.classList.remove("selected-card");
     readMoreChild.textContent = "Voir plus 🔍";
-=======
-function openCardDetails(e) {
-  // get parent element via returned event
-  let el = e.target;
-  let parentEl = el.parentElement;
-  let parentClasses = parentEl.classList;
-
-  // if in leaving state, prepare for active state
-  if (parentClasses.contains("selected-card")) {
-    // update text of button
-    el.firstChild.textContent = "Voir plus 🔍";
-    parentEl.classList.remove("selected-card");
-  } else {
-    // add selected class to this button's parent card
-    parentEl.classList.add("selected-card");
-
-    // since now in active state, prepare for departing state
-    el.firstChild.textContent = "Retour ⏎";
->>>>>>> main
   }
 }
 
