@@ -3,14 +3,20 @@
   src: url("/assets/fonts/WorkSans-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Chaney";
+  src: url("/assets/fonts/CHANEY-Regular.otf") format("opentype");
+}
+
 :root {
   --main-theme: #f7d1d1;
   --main-theme-dark: maroon;
   --main-theme-transparent-dark: rgb(178 118 129 / 63%);
   --border-radius: 0.3em;
   --secondary-theme: #fffafa;
-  --tertiary-theme: #8ac1e5;
-  --tertiary-theme-dark: #108db7;
+  --tertiary-theme: #f15e26;
+  --button-theme: #8ac1e5;
+  --button-theme-dark: #108db7;
   --off-black: rgb(61, 61, 61);
   --app-height: 100%;
   font-family: "WorkSansRegular", Arial, Helvetica, sans-serif;
@@ -32,9 +38,6 @@ main {
 }
 
 .hero-wrapper {
-  background-color: var(--main-theme);
-  color: white;
-  box-shadow: 1px 3px 14px var(--main-theme-transparent-dark);
   width: 100vw;
   text-align: left;
   box-sizing: border-box;
@@ -43,6 +46,8 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 0.9em;
+  position: absolute;
+  z-index: 1;
   > * {
     margin: 0;
   }
@@ -52,7 +57,8 @@ main {
   }
   .hero-title {
     font-size: 1.6em;
-    color: var(--off-black);
+    color: var(--tertiary-theme);
+    font-family: "Chaney", Arial, Helvetica, sans-serif;
   }
 }
 
@@ -178,9 +184,9 @@ label div:nth-child(2) {
 
 .active-card .card-title {
   text-decoration: 0.2em underline;
-  text-decoration-color: var(--main-theme);
+  text-decoration-color: var(--tertiary-theme);
   -webkit-text-decoration-line: underline;
-  -webkit-text-decoration-color: var(--main-theme);
+  -webkit-text-decoration-color: var(--tertiary-theme);
   -webkit-text-decoration-thickness: 0.2em;
 }
 
@@ -252,7 +258,8 @@ label div:nth-child(2) {
 }
 
 .active-card .card-number {
-  background: var(--main-theme);
+  background: var(--tertiary-theme);
+  color: white;
 }
 
 .card:hover {
@@ -300,7 +307,7 @@ label div:nth-child(2) {
 .btn {
   text-decoration: none;
   margin: 1em 0.7em;
-  background-color: var(--tertiary-theme);
+  background-color: var(--button-theme);
   color: white;
   padding: 0.3em 0.5em;
   border-radius: var(--border-radius);
@@ -312,7 +319,7 @@ label div:nth-child(2) {
 
 .btn:hover {
   filter: drop-shadow(1px 1px 1px grey);
-  background-color: var(--tertiary-theme-dark);
+  background-color: var(--button-theme-dark);
   cursor: pointer;
 }
 
