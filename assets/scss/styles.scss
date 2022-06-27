@@ -440,10 +440,14 @@ dialog::backdrop {
 
 // change background color to match topmost element for more immersive experience on mobiles with a notch
 /* animate body's background color to change from blue to beige */
+html {
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
 body,
 html {
-  background-color: var(--main-theme);
-  transition: background-color 0.1s ease;
   overflow: hidden;
 }
 

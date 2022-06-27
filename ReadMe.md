@@ -24,6 +24,10 @@
 
 - http://jsfiddle.net/y4Ede/90/
 
+### dealing with the iPhone notch
+
+- https://itnext.io/make-your-pwas-look-handsome-on-ios-fd8fdfcd5777
+
 ## SVGs
 
 - Trim whitespace from SVG https://stackoverflow.com/a/53786013/5395435
