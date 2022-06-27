@@ -17,8 +17,13 @@ title: Home
   <section class="carousel">
     {%- for card in collections.sortOrder -%}
     <div class="card" id="{{ card.data.cssID }}-card">
-      <h2 class="card-title-wrapper"><span class="card-number">{{ card.data.number }}</span>
-        <span class="card-title"> {{ card.data.title }}</span>
+      <h2 class="card-title-wrapper"><span class="card-number {% if card.data.number === 10 %}cart{%- endif -%}">
+        {%- if card.data.number === 10 -%}
+          {% include "cart.svg" %}
+        {%- else -%}
+          {{ card.data.number }}
+        {%- endif -%}</span>
+        <span class="card-title">{{ card.data.title }}</span>
       </h2>
       <button class="read-more"
         data-restaurant-name="{{ card.data.title }}"

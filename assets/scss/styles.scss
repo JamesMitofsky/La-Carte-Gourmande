@@ -240,6 +240,14 @@ label div:nth-child(2) {
     align-items: center;
     transition: all 0.2s ease;
   }
+  .card-number.cart {
+    background: transparent;
+    margin: 0;
+    aspect-ratio: inherit;
+  }
+  .card-number.cart svg {
+    height: 1.7em;
+  }
   svg {
     height: 2em;
     margin: 0.5em;
