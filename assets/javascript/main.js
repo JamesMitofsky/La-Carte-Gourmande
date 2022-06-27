@@ -17,7 +17,7 @@ function detectCardOpenSwipe() {
   // loop through all cards
   for (let i = 0; i < cards.length; i++) {
     let card = cards[i];
-    var mc = new Hammer(card);
+    var mc = new Hammer(card, { touchAction: "pan-x" });
 
     //enable all directions
     mc.get("swipe").set({
@@ -29,7 +29,7 @@ function detectCardOpenSwipe() {
     // listen to events...
     mc.on("swipeup", function () {
       // open card details
-      console.log(card);
+      openCloseCard(card);
     });
   }
 }
