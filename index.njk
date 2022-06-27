@@ -2,39 +2,43 @@
 layout: default
 title: Home
 ---
-
-<section aria-hidden="true" id="loading">
-  <header class="loading-header">
-    <h1>La Carte Gourmande</h1>
-    <h2>10 adresses pour se régaler à Caen</h2>
-  </header>
-  {% include "loading.svg" %}
-</section>
 <main>
-  <header class="hero-wrapper">
+  <header id="info-btn"  class="hero-wrapper">
     <h1 class="hero-title">La Carte Gourmande</h1>
-    <nav id="info-btn" class="hero-nav">{% include "info.svg" %}</nav>
+    <input id="menu_checkbox">
+    <label for="menu_checkbox">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
   </header>
   <div aria-hidden="true" id="container">{% include "map.svg" %}</div>
 
   <section class="carousel">
     {%- for card in collections.sortOrder -%}
     <div class="card" id="{{ card.data.cssID }}-card">
-      <h2 class="card-title-wrapper">
-        <span class="circle"
-          ><span class="card-number">{{ card.data.number }}</span></span
-        >
+      <h2 class="card-title-wrapper"><span class="card-number">{{ card.data.number }}</span>
         <span class="card-title"> {{ card.data.title }}</span>
       </h2>
-      <a
-        class="open-map-app"
-        target="_blank"
+      <button class="read-more"
         data-restaurant-name="{{ card.data.title }}"
-        onClick="createMapLink()"
-        href=""
-        >Itinéraire</a
-      >
+        >
+        <div class="card-btn">Voir plus 🔍
+        </div>
+      </button>
+      <img class="restaurant-preview" src="/assets/photos/restaurants/{{ card.data.cssID }}/preview.jpeg" alt="Preview image of {{ card.data.title }}">
       <p>{{ card.data.description }}</p>
+      <div class="social-media-wrapper">
+        {% if card.data.instagramHandle %}
+          <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}">{% include "instagram.svg" %}</a>
+        {% endif %}
+        {% if card.data.facebookHandle %}
+          <a target="_blank" class="svg-link" href="https://www.facebook.com/{{ card.data.facebookHandle }}">{% include "facebook.svg" %}</a>
+        {% endif %}
+        {% if card.data.website %}
+          <a target="_blank" class="svg-link" href="{{ card.data.website }}">{% include "website.svg" %}</a>
+        {% endif %}
+      </div>
     </div>
     {%- endfor -%}
   </section>
@@ -43,15 +47,25 @@ title: Home
 <dialog id="dialog">
   <div class="dialog-content">
     <div class="dialog-header">
-      <header><h1>Les Contributors</h1></header>
+      <header>
+        <h1>Les Contributors</h1>
+        <button class="btn" id="close-dialog">Retour ⏎</button>
+      </header>
     </div>
-    {%- for contributor in collections.contributors -%}
-
-    <div class="contributor">
-      <h3>{{ contributor.data.designerName }}</h3>
-      <p>{{ contributor.data.summary }}</p>
+      {%- for contributor in collections.contributors -%}
+      <div class="contributor">
+        <img
+        class="profile-picture"
+        src="{{ contributor.data.profilePicture }}"
+        alt="Profile picture of {{ contributor.data.designerName }}"
+        />
+      <h2>{{ contributor.data.businessName }}</h2>
+        <a target="_blank" href="{{ contributor.data.website }}">
+        <subtitle>Explorer le travail de {{contributor.data.designerName}}</subtitle></a
+        >
+        <p>{{ contributor.data.summary }}</p>
+      </div>
     </div>
     {%- endfor -%}
-    <button id="close-dialog">Retourner</button>
   </div>
 </dialog>

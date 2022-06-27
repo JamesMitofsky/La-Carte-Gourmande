@@ -243,9 +243,12 @@ label div:nth-child(2) {
     height: 2em;
     margin: 0.5em;
   }
+<<<<<<< HEAD
   svg * {
     fill: var(--tertiary-theme);
   }
+=======
+>>>>>>> main
   .restaurant-preview {
     width: -webkit-fill-available;
     height: 7em;
@@ -444,7 +447,10 @@ body,
 html {
   background-color: var(--main-theme);
   transition: background-color 0.1s ease;
+<<<<<<< HEAD
   overflow: hidden;
+=======
+>>>>>>> main
 }
 
 // looped function to animate in the paths of the SVG piece by piece

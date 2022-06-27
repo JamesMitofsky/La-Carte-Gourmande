@@ -11,7 +11,7 @@ function showNode(node) {
   // we want to zoom in to see just around the node -
   const relativeZoom = panZoom.getZoom();
   // this formula below could be improved... I found it worked nicely for my usecases but maybe it should controlled by a 2nd parameter to this function
-  const desiredWidth = 50 * Math.sqrt(bbox.width / 25) * 11 * realZoom;
+  const desiredWidth = 50 * Math.sqrt(bbox.width / 25) * 5 * realZoom;
   panZoom.zoom((relativeZoom * width) / desiredWidth);
 }
 
@@ -107,11 +107,10 @@ window.onload = function () {
   window.panZoom = svgPanZoom("#map-of-caen", {
     zoomEnabled: true,
     controlIconsEnabled: false,
-    fit: 1,
-    center: 1,
-    minZoom: 1,
-    maxZoom: 10,
-    // zoomScaleSensitivity: 0.8,
+    fit: true,
+    center: true,
+    minZoom: 0.7,
+    maxZoom: 6,
     customEventsHandler: eventsHandler,
   });
 };
