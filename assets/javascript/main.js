@@ -1,10 +1,134 @@
 main();
 
 function main() {
-  hideLoadingScreen();
   listenForCardsHover();
   createMapLink();
   listenForDialog();
+  listenForCardDetails();
+  getAppHeight();
+  listenToPOIs();
+  detectCardOpenSwipe();
+}
+
+function detectCardOpenSwipe() {
+  // get elements with card class
+  let cards = document.getElementsByClassName("card");
+
+  // loop through all cards
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    var mc = new Hammer(card);
+
+    //enable all directions
+    mc.get("swipe").set({
+      direction: Hammer.DIRECTION_ALL,
+      threshold: 1,
+      velocity: 0.1,
+    });
+
+    // listen to events...
+    mc.on("swipeup", function () {
+      // open card details
+      console.log(card);
+    });
+  }
+}
+
+function scrollToCard(x) {
+  // get carousel element by class
+  let carousel = document.getElementsByClassName("carousel")[0];
+
+  // scroll to x position
+  let carouselPosition = carousel.scrollLeft;
+
+  let newPos = carouselPosition + x;
+
+  carousel.scrollTo(newPos, 0);
+}
+
+function getAppHeight() {
+  const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", appHeight);
+  appHeight();
+}
+
+function listenToPOIs() {
+  // get all elements with class POI
+  let pointsOfInterest = document.getElementsByClassName("POI");
+
+  // create loop of pointsOfInterest to listen for click
+  for (let i = 0; i < pointsOfInterest.length; i++) {
+    // listen for click
+    pointsOfInterest[i].addEventListener("click", function () {
+      let poiEl = this;
+      // get poi id
+      let poiId = poiEl.id;
+
+      // get all elements with class card
+      let cards = document.getElementsByClassName("card");
+      // check if card has id which matches poiID
+      for (let j = 0; j < cards.length; j++) {
+        let card = cards[j];
+
+        // trim card-specific id ending from the string
+        let cardId = card.id.slice(0, -5);
+
+        if (cardId === poiId) {
+          // if card already has active-card class, return
+          if (card.classList.contains("active-card")) return;
+
+          removeClassFromElements(cards, "active-card");
+
+          // add class active-card to card
+          card.classList.add("active-card");
+
+          // get position of card
+          let cardPosition = getElDimensions(card);
+          scrollToCard(cardPosition.x - 10);
+
+          panToPin(poiEl);
+        }
+      }
+    });
+  }
+}
+
+function listenForCardDetails() {
+  // get element with class "read-more"
+  let readMoreElements = document.getElementsByClassName("read-more");
+
+  // create loop of readMoreElements to listen for click
+  for (let i = 0; i < readMoreElements.length; i++) {
+    let readMore = readMoreElements[i];
+    readMore.addEventListener("click", function () {
+      // get element with class "card"
+      let card = readMore.parentElement;
+      // open card details
+      openCloseCard(card);
+    });
+  }
+}
+
+function openCloseCard(card) {
+  // get readmore element
+  let readMore = card.getElementsByClassName("read-more")[0];
+
+  // get child element of readmore
+  let readMoreChild = readMore.firstElementChild;
+
+  if (!card.classList.contains("selected-card")) {
+    // add class "active-card" to card
+    card.classList.add("selected-card");
+    ``;
+    // update text content of button
+    readMoreChild.textContent = "Retour ⏎";
+  } else {
+    card.classList.remove("selected-card");
+    readMoreChild.textContent = "Voir plus 🔍";
+  }
 }
 
 function listenForDialog() {
@@ -32,22 +156,6 @@ function listenForDialog() {
       dialog.close();
     }, "500");
   });
-}
-
-function hideLoadingScreen() {
-  // listen for DOM to render; infer that CSS loading animation begins when DOM renders
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-      // wait after content is loaded for CSS animations to complete
-      setTimeout(() => {
-        // get element with id "loading"
-        let loading = document.getElementById("loading");
-        hideElement(loading);
-      }, "5300");
-    },
-    false
-  );
 }
 
 function hideElement(el) {
