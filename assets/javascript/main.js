@@ -6,6 +6,19 @@ function main() {
   listenForDialog();
   listenForCardDetails();
   getAppHeight();
+  listenToPOIs();
+}
+
+function scrollToCard(x) {
+  // get carousel element by class
+  let carousel = document.getElementsByClassName("carousel")[0];
+
+  // scroll to x position
+  let carouselPosition = carousel.scrollLeft;
+
+  let newPos = carouselPosition + x;
+
+  carousel.scrollTo(newPos, 0);
 }
 
 function getAppHeight() {
@@ -15,6 +28,47 @@ function getAppHeight() {
   };
   window.addEventListener("resize", appHeight);
   appHeight();
+}
+
+function listenToPOIs() {
+  // get all elements with class POI
+  let pointsOfInterest = document.getElementsByClassName("POI");
+
+  // create loop of pointsOfInterest to listen for click
+  for (let i = 0; i < pointsOfInterest.length; i++) {
+    // listen for click
+    pointsOfInterest[i].addEventListener("click", function () {
+      let poiEl = this;
+      // get poi id
+      let poiId = poiEl.id;
+
+      // get all elements with class card
+      let cards = document.getElementsByClassName("card");
+      // check if card has id which matches poiID
+      for (let j = 0; j < cards.length; j++) {
+        let card = cards[j];
+
+        // trim card-specific id ending from the string
+        let cardId = card.id.slice(0, -5);
+
+        if (cardId === poiId) {
+          // if card already has active-card class, return
+          if (card.classList.contains("active-card")) return;
+
+          removeClassFromElements(cards, "active-card");
+
+          // add class active-card to card
+          card.classList.add("active-card");
+
+          // get position of card
+          let cardPosition = getElDimensions(card);
+          scrollToCard(cardPosition.x - 10);
+
+          panToPin(poiEl);
+        }
+      }
+    });
+  }
 }
 
 function listenForCardDetails() {
