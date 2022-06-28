@@ -131,7 +131,7 @@ function openCloseCard(card) {
     card.classList.add("selected-card");
     ``;
     // update text content of button
-    readMoreChild.textContent = "Explore les Autres 🧑‍🍳";
+    readMoreChild.textContent = "Revoir la Carte 🧑‍🍳";
   } else {
     card.classList.remove("selected-card");
     readMoreChild.textContent = "Allez-y 🍽";

@@ -5,9 +5,9 @@ address: 19 Rue Ecuyère, 14000 Caen
 website: https://babekstreetfood.fr/
 instagramHandle: babekstreetfood
 facebookHandle: babekstreetfood
-css-id: keys-and-co
 number: 9
 cssID: babek
+tel: 02 31 50 87 26
 lang: fr
 googlePlacesID: ChIJB87dQqJDCkgR41JVC9CW2Sg
 description: >

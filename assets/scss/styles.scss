@@ -237,9 +237,6 @@ label div:nth-child(2) {
     height: 3em;
     margin: 0.5em;
   }
-  svg * {
-    fill: var(--tertiary-theme);
-  }
   .restaurant-preview {
     width: -webkit-fill-available;
     height: 7em;
@@ -247,10 +244,14 @@ label div:nth-child(2) {
     border-radius: var(--border-radius);
     margin-top: 0.5em;
   }
-  .social-media-wrapper {
+  .all-links > * {
+    text-decoration: none;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    margin-bottom: 2em;
+  }
+  .tel {
+    fill: cadetblue;
   }
 }
 
@@ -365,8 +366,9 @@ dialog {
   transition: all ease 0.5s;
   header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    font-family: Helvetica, sans-serif;
+    color: var(--tertiary-theme);
   }
 }
 

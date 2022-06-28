@@ -32,18 +32,26 @@ title: Home
       </button>
       <img class="restaurant-preview" src="/assets/photos/restaurants/{{ card.data.cssID }}/preview.jpeg" alt="Preview image of {{ card.data.title }}">
       <p>{{ card.data.description }}</p>
-      <div class="social-media-wrapper">
+      <div class="all-links">
+
+        <a class="map-btn" target="_blank" href="">{% include "map-btn.svg" %}L'itinèrer</a>
+        <!-- if card.data.tel exists -->
+        {%- if card.data.tel -%}
+          <a target="_blank" class="tel" href="tel:{{ card.data.tel }}">{% include "tel.svg" %}{{ card.data.tel }}</a>
+        {%- endif -%}
+
+
         {% if card.data.instagramHandle %}
-          <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}">{% include "instagram.svg" %}</a>
+          <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}">{% include "instagram.svg" %} Instagram</a>
         {% endif %}
         {% if card.data.facebookHandle %}
-          <a target="_blank" class="svg-link" href="https://www.facebook.com/{{ card.data.facebookHandle }}">{% include "facebook.svg" %}</a>
+          <a target="_blank" class="svg-link" href="https://www.facebook.com/{{ card.data.facebookHandle }}">{% include "facebook.svg" %} Facebook</a>
         {% endif %}
         {% if card.data.website %}
           <a target="_blank" class="svg-link" href="{{ card.data.website }}">{% include "website.svg" %}</a>
         {% endif %}
-        <a class="map-btn" target="_blank" href="">{% include "map-btn.svg" %}</a>
-      </div>
+
+    </div>
     </div>
     {%- endfor -%}
   </section>
@@ -54,7 +62,6 @@ title: Home
     <div class="dialog-header">
       <header>
         <h1>Les Créateurs</h1>
-        <button class="btn" id="close-dialog">Explore les Autres 🧑‍🍳</button>
       </header>
     </div>
       {%- for contributor in collections.contributors -%}
@@ -72,5 +79,6 @@ title: Home
       </div>
     </div>
     {%- endfor -%}
+    <button class="btn" id="close-dialog">Revoir la Carte 🧑‍🍳</button>
   </div>
 </dialog>

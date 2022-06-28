@@ -6,6 +6,7 @@ instagramHandle: lesquillescaen
 facebookHandle: lesquillescaen
 number: 1
 cssID: les-quilles
+tel: 02 31 93 20 30
 lang: fr
 googlePlacesID: ChIJyc49sb9DCkgRSRGZii7U2SU
 description: >

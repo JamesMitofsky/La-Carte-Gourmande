@@ -6,6 +6,7 @@ facebookHandle: BuonaTavolaCaen
 instagramHandle: la_buona_tavola_caen
 number: 4
 cssID: la-buona-tavola
+tel: 02 31 50 35 35
 lang: fr
 googlePlacesID: ChIJGWAg7r9CCkgRmMay_glp4z4
 description: >

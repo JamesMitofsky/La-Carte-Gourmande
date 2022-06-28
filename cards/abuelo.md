@@ -6,6 +6,7 @@ instagramHandle: abuelocaen
 facebookHandle: AbueloCaen
 number: 3
 cssID: abuelo
+tel: 09 88 52 00 99
 lang: fr
 googlePlacesID: ChIJI73eY5ZCCkgR2k5EMYrhWEw
 description: >

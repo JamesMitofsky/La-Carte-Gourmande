@@ -7,6 +7,7 @@ facebookHandle: keyscoffeeco
 instagramHandle: keysandco
 number: 10
 cssID: keys-and-co
+tel:
 lang: fr
 googlePlacesID:
 description: >
