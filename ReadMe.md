@@ -38,3 +38,4 @@
 
 - https://developers.google.com/maps/documentation/urls/get-started
 - https://stackoverflow.com/questions/30857150/getting-google-maps-link-from-place-id
+- https://stackoverflow.com/questions/13924829/how-to-open-links-in-apple-maps-or-google-maps

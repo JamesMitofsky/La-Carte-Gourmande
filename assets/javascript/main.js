@@ -262,7 +262,7 @@ function findElementLeftAndTop(el) {
 
 function createMapLink() {
   // is the device on apple or Google device?
-  let mapInfo = deviceTypeAndURL();
+  let mapURLParams = buildMapURL();
 
   // get all elements with read-more class
   let cards = document.getElementsByClassName("card");
@@ -277,23 +277,15 @@ function createMapLink() {
     // get button element to set link address
     let mapBtn = card.getElementsByClassName("map-btn")[0];
 
-    if (mapInfo.isApple) {
-      mapBtn.href = mapInfo.baseURL + restaurantName;
-    } else {
-      mapBtn.href = mapInfo.baseURL + placeID;
-    }
+    mapBtn.href =
+      mapURLParams.base + restaurantName + mapURLParams.placeIDParam + placeID;
   }
 }
 
-function deviceTypeAndURL() {
-  // both map options will require the name of the place added at the end of the URL
-  if (iOS()) {
-    return { isApple: true, baseURL: "maps://maps.google.com/maps?q=" };
-  } else
-    return {
-      isApple: false,
-      baseURL: "https://www.google.com/maps/place/?q=place_id:",
-    };
+function buildMapURL() {
+  let base = "https://www.google.com/maps/search/?api=1&query=";
+  let placeIDParam = "&query_place_id=";
+  return { base, placeIDParam };
 }
 
 function iOS() {
