@@ -140,8 +140,6 @@ label div:nth-child(2) {
 }
 
 #container {
-  height: 100%;
-  width: 100%;
   flex: 1;
 }
 
@@ -163,6 +161,7 @@ label div:nth-child(2) {
 
 .carousel {
   width: 100vw;
+  height: auto;
   overflow-x: scroll;
   display: flex;
   flex-direction: row;
@@ -292,10 +291,10 @@ label div:nth-child(2) {
   .card-btn {
     bottom: 0;
     z-index: 1;
-    margin: 0.6em;
+    margin: 1em 0.5em;
     border: none;
     transition: all 0.2s ease;
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 }
 
