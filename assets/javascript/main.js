@@ -10,6 +10,14 @@ function main() {
   detectCardOpenSwipe();
 }
 
+function hideShowCardMask(card) {
+  if (card.classList.contains("mask")) {
+    card.classList.remove("mask");
+  } else {
+    card.classList.add("mask");
+  }
+}
+
 function detectCardOpenSwipe() {
   // get elements with card class
   let cards = document.getElementsByClassName("card");
@@ -105,14 +113,16 @@ function listenToPOIs() {
 
 function listenForCardDetails() {
   // get element with class "read-more"
-  let readMoreElements = document.getElementsByClassName("read-more");
+  // let readMoreElements = document.getElementsByClassName("read-more");
+
+  // get all elements with class card
+  let cards = document.getElementsByClassName("card");
 
   // create loop of readMoreElements to listen for click
-  for (let i = 0; i < readMoreElements.length; i++) {
-    let readMore = readMoreElements[i];
-    readMore.addEventListener("click", function () {
-      // get element with class "card"
-      let card = readMore.parentElement;
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+
+    card.addEventListener("click", function () {
       // open card details
       openCloseCard(card);
     });
@@ -120,6 +130,9 @@ function listenForCardDetails() {
 }
 
 function openCloseCard(card) {
+  // hide button mask
+  hideShowCardMask(card);
+
   // get readmore element
   let readMore = card.getElementsByClassName("read-more")[0];
 

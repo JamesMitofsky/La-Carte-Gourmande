@@ -16,7 +16,7 @@ title: Home
 
   <section class="carousel">
     {%- for card in collections.sortOrder -%}
-    <div data-restaurant-name="{{ card.data.title }}" data-place-id="{{ card.data.googlePlacesID }}" class="card" id="{{ card.data.cssID }}-card">
+    <div data-restaurant-name="{{ card.data.title }}" data-place-id="{{ card.data.googlePlacesID }}" class="card mask" id="{{ card.data.cssID }}-card">
       <h2 class="card-title-wrapper"><span class="card-number {% if card.data.number === 10 %}cart{%- endif -%}">
         {%- if card.data.number === 10 -%}
           {% include "cart.svg" %}
