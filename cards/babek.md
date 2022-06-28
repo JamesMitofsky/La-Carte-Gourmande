@@ -9,6 +9,7 @@ css-id: keys-and-co
 number: 9
 cssID: babek
 lang: fr
+googlePlacesID: ChIJB87dQqJDCkgR41JVC9CW2Sg
 description: >
   Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison."
 ---

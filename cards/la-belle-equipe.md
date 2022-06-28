@@ -7,6 +7,7 @@ instagramHandle: belleequipecaen
 number: 6
 cssID: la-belle-equipe
 lang: fr
+googlePlacesID: ChIJZ69ylJlCCkgRWTGO6p7RoqI
 description: >
   C'est le bistro de quartier! Accueil convivial et cuisine maison, avec des bons produits de saison. On se régale.
 ---

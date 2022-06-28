@@ -262,25 +262,38 @@ function findElementLeftAndTop(el) {
 
 function createMapLink() {
   // is the device on apple or Google device?
-  let deviceTypeURL = mapsSelector();
+  let mapInfo = deviceTypeAndURL();
 
   // get all elements with read-more class
-  let els = document.getElementsByClassName("open-map-app");
+  let cards = document.getElementsByClassName("card");
   // create loop of all elements
-  for (let i = 0; i < els.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     // build the right URL for the user's device
-    let el = els[i];
-    let restaurantName = el.getAttribute("data-restaurant-name");
-    let newURL = deviceTypeURL + restaurantName;
-    el.setAttribute("href", newURL);
+    let card = cards[i];
+    let restaurantName = card.getAttribute("data-restaurant-name");
+    let placeID = card.getAttribute("data-place-id");
+    if (placeID == "") placeID = restaurantName;
+
+    // get button element to set link address
+    let mapBtn = card.getElementsByClassName("map-btn")[0];
+
+    if (mapInfo.isApple) {
+      mapBtn.href = mapInfo.baseURL + restaurantName;
+    } else {
+      mapBtn.href = mapInfo.baseURL + placeID;
+    }
   }
 }
 
-function mapsSelector() {
+function deviceTypeAndURL() {
   // both map options will require the name of the place added at the end of the URL
   if (iOS()) {
-    return "maps://maps.google.com/maps?q=";
-  } else return "https://maps.google.com/maps/search/";
+    return { isApple: true, baseURL: "maps://maps.google.com/maps?q=" };
+  } else
+    return {
+      isApple: false,
+      baseURL: "https://www.google.com/maps/place/?q=place_id:",
+    };
 }
 
 function iOS() {

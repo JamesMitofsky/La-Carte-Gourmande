@@ -31,3 +31,10 @@
 ## SVGs
 
 - Trim whitespace from SVG https://stackoverflow.com/a/53786013/5395435
+
+## Maps
+
+### Google Places Interface
+
+- https://developers.google.com/maps/documentation/urls/get-started
+- https://stackoverflow.com/questions/30857150/getting-google-maps-link-from-place-id

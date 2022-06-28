@@ -15,10 +15,11 @@
   --border-radius: 0.3em;
   --secondary-theme: #fffafa;
   --tertiary-theme: #f15e26;
-  --button-theme: #8ac1e5;
+  --button-theme: #299eeb;
   --button-theme-dark: #108db7;
   --off-black: rgb(61, 61, 61);
   --app-height: 100%;
+  --button-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
   font-family: "WorkSansRegular", Arial, Helvetica, sans-serif;
   color: rgb(61, 61, 61);
   font-size: 14px;
@@ -106,17 +107,6 @@ label {
   }
 }
 
-// label:before {
-//   content: "";
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   background-color: #f44336;
-//   transition: 1.2s cubic-bezier(0, 0.96, 1, 0.02) background-color;
-// }
-
 label div:last-child {
   margin-bottom: 0;
   transform-origin: 40px;
@@ -131,10 +121,6 @@ label div:first-child {
 label div:nth-child(2) {
   width: 30px;
 }
-
-// #menu_checkbox:checked + label:before {
-//   background-color: #4caf50;
-// }
 
 #menu_checkbox:checked + label div:first-child {
   top: -6px;
@@ -249,7 +235,7 @@ label div:nth-child(2) {
     height: 1.7em;
   }
   svg {
-    height: 2em;
+    height: 3em;
     margin: 0.5em;
   }
   svg * {
@@ -261,6 +247,11 @@ label div:nth-child(2) {
     object-fit: cover;
     border-radius: var(--border-radius);
     margin-top: 0.5em;
+  }
+  .social-media-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 
@@ -300,15 +291,10 @@ label div:nth-child(2) {
   .card-btn {
     bottom: 0;
     z-index: 1;
-    margin-left: 68px;
-    color: #2791b4;
-    background: transparent;
-    text-decoration: underline;
-    margin: 1em 0.7em;
+    margin: 0.3em 0;
     border: none;
     transition: all 0.2s ease;
-    font-size: 1.4em;
-    filter: none;
+    font-size: 1.3em;
   }
 }
 
@@ -321,7 +307,7 @@ label div:nth-child(2) {
   margin: 1em 0.7em;
   background-color: var(--button-theme);
   color: white;
-  padding: 0.3em 0.5em;
+  padding: 0.4em 0.6em;
   border-radius: var(--border-radius);
   filter: drop-shadow(2px 3px 3px grey);
   border: none;
@@ -467,43 +453,4 @@ html {
 .loading-header * {
   opacity: 0;
   transform: translateY(-5em);
-}
-
-// add animation to all SVG paths
-@for $i from 1 through 250 {
-  // only for paths which are sequentially even children of the SVG
-  @if $i % 2 == 0 {
-    #loading svg path:nth-child(#{$i}) {
-      animation: animateIn ease forwards;
-      animation-delay: #{$i * 0.08 + 0.5}s;
-      animation-duration: 0.2s;
-      transform-origin: center;
-    }
-  }
-  #loading svg path:nth-child(#{$i}) {
-    animation: animateIn ease forwards;
-    animation-delay: #{$i * 0.04 +0.5}s;
-    animation-duration: 0.2s;
-    transform-origin: center;
-  }
-}
-
-@for $i from 1 through 2 {
-  .loading-header *:nth-child(#{$i}) {
-    animation: animateIn 1.5s ease forwards;
-    animation-delay: #{$i * 0.3}s;
-    transform-origin: center;
-  }
-}
-
-@keyframes animateIn {
-  0% {
-    transform: translateY(-5em);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
