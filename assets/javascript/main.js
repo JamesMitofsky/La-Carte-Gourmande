@@ -129,10 +129,10 @@ function openCloseCard(card) {
     card.classList.add("selected-card");
     ``;
     // update text content of button
-    readMoreChild.textContent = "Retour ⏎";
+    readMoreChild.textContent = "Explore les Autres 🧑‍🍳";
   } else {
     card.classList.remove("selected-card");
-    readMoreChild.textContent = "Voir plus 🔍";
+    readMoreChild.textContent = "Allez-y 🍽";
   }
 }
 
