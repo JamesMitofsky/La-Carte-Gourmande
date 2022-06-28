@@ -39,14 +39,16 @@ function detectCardOpenSwipe() {
   }
 }
 
-function scrollToCard(x) {
+//
+function scrollToCard(cardDistanceToLeft) {
   // get carousel element by class
   let carousel = document.getElementsByClassName("carousel")[0];
 
-  // scroll to x position
+  // current scroll position of the carousel itself
   let carouselPosition = carousel.scrollLeft;
 
-  let newPos = carouselPosition + x;
+  // get new position by setting the current scroll position to match the exact distance from the left of the incoming card
+  let newPos = carouselPosition + cardDistanceToLeft;
 
   carousel.scrollTo(newPos, 0);
 }
