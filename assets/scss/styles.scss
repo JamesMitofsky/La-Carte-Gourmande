@@ -194,15 +194,13 @@ label div:nth-child(2) {
 .card {
   padding: 0.5em;
   margin: 0.5em;
-  background: white;
-  border-radius: var(--border-radius);
+  margin-right: 2em;
   flex: 1 1 0px;
   height: 26vh;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
   max-width: 40vw;
-  box-shadow: 2px 3px 5px 2px rgb(61 61 61 / 60%);
   transition: all ease 0.4s;
   .card-title-wrapper {
     display: flex;
@@ -255,11 +253,6 @@ label div:nth-child(2) {
   }
 }
 
-.active-card {
-  box-shadow: 10px 11px 14px 0px rgb(0 0 0 / 60%),
-    2px 3px 5px 2px rgb(61 61 61 / 60%);
-}
-
 .active-card .card-number {
   background: var(--tertiary-theme);
   color: white;
@@ -274,7 +267,7 @@ label div:nth-child(2) {
   position: absolute;
   border: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   width: 100%;
   padding: 0;
@@ -292,10 +285,10 @@ label div:nth-child(2) {
   .card-btn {
     bottom: 0;
     z-index: 1;
-    margin: 1em 0.5em;
+    margin: 0;
     border: none;
     transition: all 0.2s ease;
-    font-size: 1.5em;
+    width: 100%;
   }
 }
 
