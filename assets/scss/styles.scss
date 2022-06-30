@@ -184,6 +184,7 @@ label div:nth-child(2) {
   width: 100vw;
   max-width: fit-content;
   margin: 0;
+  padding: 2em;
   box-sizing: border-box;
   z-index: 2;
   background-color: var(--secondary-theme);
@@ -291,6 +292,11 @@ label div:nth-child(2) {
     transition: all 0.2s ease;
     width: 100%;
   }
+}
+.selected-card button.read-more {
+  bottom: 2em;
+  width: 90%;
+  margin: auto;
 }
 
 .read-more:hover {
