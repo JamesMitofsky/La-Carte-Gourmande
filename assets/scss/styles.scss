@@ -171,6 +171,8 @@ label div:nth-child(2) {
 
 .card.selected-card {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   bottom: 0;
   left: 0;
   height: 100%;
@@ -237,9 +239,14 @@ label div:nth-child(2) {
     border-radius: var(--border-radius);
     margin-top: 0.5em;
   }
-  .all-links > * {
+  .contact-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-links > * {
     text-decoration: none;
     display: flex;
+    flex-direction: row;
     align-items: center;
     margin-bottom: 2em;
   }
@@ -264,6 +271,7 @@ label div:nth-child(2) {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  flex: 1;
   width: 100%;
   padding: 0;
   bottom: 0;
@@ -287,9 +295,11 @@ label div:nth-child(2) {
   }
 }
 .selected-card button.read-more {
-  bottom: 2em;
-  width: 90%;
+  position: relative;
+  width: 100%;
   margin: auto;
+  height: auto;
+  background: transparent;
 }
 
 .read-more:hover {
