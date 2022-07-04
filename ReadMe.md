@@ -1,42 +1,57 @@
+# La Carte Gourmande
+
 ![](https://cartegourmande.fr/assets/photos/site-preview.png)
+## Getting Started
+Download this repository locally and then install all dependencies.
+```bash
+git clone https://github.com/JamesTedesco/La-Carte-Gourmande
 
-# Resources
+npm i
+```
 
-## SVGS
+Finally, spin up a local server (while listening for changes to the SCSS file)!
+```bash
+npm run start
+```
+
+
+## Resources
+
+### SVGS
 
 ### Changing SVG render order
 
 - https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements
 
-### Apply border style to SVG paths
+#### Apply border style to SVG paths
 
 - https://stackoverflow.com/a/18330345/5395435
 
-## HTML Dialogs
+### HTML Dialogs
 
 - https://css-tricks.com/replace-javascript-dialogs-html-dialog-element/
 
-## svgPanZoom Library
+### svgPanZoom Library
 
-### Moving to Node
+#### Moving to Node
 
-## CSS
+### CSS
 
-### Circular element with unknown height
+#### Circular element with unknown height
 
 - http://jsfiddle.net/y4Ede/90/
 
-### dealing with the iPhone notch
+#### dealing with the iPhone notch
 
 - https://itnext.io/make-your-pwas-look-handsome-on-ios-fd8fdfcd5777
 
-## SVGs
+### SVGs
 
 - Trim whitespace from SVG https://stackoverflow.com/a/53786013/5395435
 
-## Maps
+### Maps
 
-### Google Places Interface
+#### Google Places Interface
 
 - https://developers.google.com/maps/documentation/urls/get-started
 - https://stackoverflow.com/questions/30857150/getting-google-maps-link-from-place-id
