@@ -1,3 +1,5 @@
+![](https://cartegourmande.fr/assets/photos/site-preview.png)
+
 # Resources
 
 ## SVGS
