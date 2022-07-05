@@ -195,7 +195,6 @@ label div:nth-child(2) {
   overflow: hidden;
   position: relative;
   min-width: 60vw;
-  max-width: 40vw;
   .card-title-wrapper {
     display: flex;
     margin: 0;
@@ -420,12 +419,14 @@ dialog::backdrop {
   :root {
     font-size: 17px;
   }
+
   .loading-header h1 {
     width: fit-content;
     border-bottom-right-radius: var(--border-radius);
   }
+
   .card {
-    height: 15vh;
+    min-width: 35vw;
   }
 
   dialog {
