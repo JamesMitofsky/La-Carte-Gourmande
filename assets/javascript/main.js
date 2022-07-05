@@ -1,3 +1,8 @@
+const flipping = new Flipping({
+  selector: () => document.querySelectorAll("[data-flip-key]"),
+  duration: 300,
+});
+
 main();
 
 function main() {
@@ -312,43 +317,11 @@ function cardSelectionState(card, direction) {
 }
 
 function flipMethod(elm, movementDirection) {
-  // First: get the current bounds
-  const first = elm.getBoundingClientRect();
+  flipping.read();
 
   // execute the script that causes layout change
   cardSelectionState(elm, movementDirection);
 
   // Last: get the final bounds
-  const last = elm.getBoundingClientRect();
-
-  // Invert: determine the delta between the
-  // first and last bounds to invert the element
-  const deltaX = first.left - last.left;
-  const deltaY = first.top - last.top;
-  const deltaW = first.width / last.width;
-  const deltaH = first.height / last.height;
-
-  // Play: animate the final element from its first bounds
-  // to its last bounds (which is no transform)
-
-  elm.animate(
-    [
-      {
-        transformOrigin: "top left",
-        transform: `
-    translate(${deltaX}px, ${deltaY}px)
-    scale(${deltaW}, ${deltaH})
-  `,
-      },
-      {
-        transformOrigin: "top left",
-        transform: "none",
-      },
-    ],
-    {
-      duration: 300,
-      easing: "ease-in-out",
-      fill: "both",
-    }
-  );
+  flipping.flip();
 }
