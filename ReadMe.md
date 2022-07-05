@@ -15,7 +15,7 @@ npm run start
 ```
 
 
-## Resources
+## Debugging Documentation
 
 ### SVGS
 
