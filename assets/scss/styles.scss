@@ -154,11 +154,10 @@ label div:nth-child(2) {
 
 .carousel {
   width: 100vw;
-  height: auto;
-  overflow-x: scroll;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  height: 29vh;
+  overflow-x: scroll;
 }
 
 .active-card .card-title {
@@ -193,12 +192,10 @@ label div:nth-child(2) {
   margin: 0.5em;
   margin-right: 2em;
   flex: 1 1 0px;
-  height: 26vh;
   overflow: hidden;
   position: relative;
   min-width: 60vw;
   max-width: 40vw;
-  transition: all ease 0.4s;
   .card-title-wrapper {
     display: flex;
     margin: 0;
@@ -207,7 +204,6 @@ label div:nth-child(2) {
     display: flex;
     align-items: center;
     font-size: 0.9em;
-    color: var(--);
   }
   .card-number {
     border-radius: 50%;
