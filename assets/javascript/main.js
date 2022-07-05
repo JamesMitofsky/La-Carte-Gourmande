@@ -346,8 +346,8 @@ function flipMethod(elm, movementDirection) {
       },
     ],
     {
-      duration: 300,
-      easing: "ease-in-out",
+      duration: 200,
+      easing: "ease",
       fill: "both",
     }
   );
