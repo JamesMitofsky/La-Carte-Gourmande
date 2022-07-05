@@ -157,6 +157,8 @@ label div:nth-child(2) {
   display: flex;
   flex-direction: row;
   height: 29vh;
+  gap: 1em;
+  padding: 1em;
   overflow-x: scroll;
 }
 
@@ -188,8 +190,6 @@ label div:nth-child(2) {
 }
 
 .card {
-  margin: 0.5em;
-  margin-right: 2em;
   flex: 1 1 0px;
   overflow: hidden;
   position: relative;
