@@ -109,7 +109,7 @@ window.onload = function () {
     controlIconsEnabled: false,
     fit: true,
     center: true,
-    minZoom: 0.7,
+    minZoom: 1,
     maxZoom: 6,
     customEventsHandler: eventsHandler,
   });
