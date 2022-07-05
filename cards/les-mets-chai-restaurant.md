@@ -1,5 +1,5 @@
 ---
-title: Les Mets Chai Restaurant
+title: Les Mets Chai
 tags: cards
 address: 17 Rue des Equipes d'urgence, 14000 Caen
 facebookHandle: lesmetschairesto
