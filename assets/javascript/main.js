@@ -127,13 +127,11 @@ function openCloseCard(card) {
   let readMoreChild = readMore.firstElementChild;
 
   if (!card.classList.contains("selected-card")) {
-    // add class "active-card" to card
-    card.classList.add("selected-card");
-    ``;
+    flipMethod(card, "enter");
     // update text content of button
     readMoreChild.textContent = "Revoir la Carte 🧑‍🍳";
   } else {
-    card.classList.remove("selected-card");
+    flipMethod(card, "leave");
     readMoreChild.textContent = "Allez-y 🍽";
   }
 }
@@ -302,5 +300,55 @@ function iOS() {
     ].includes(navigator.platform) ||
     // iPad on iOS 13 detection
     (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
+}
+
+function cardSelectionState(card, direction) {
+  if (direction == "enter") {
+    card.classList.add("selected-card");
+  } else {
+    card.classList.remove("selected-card");
+  }
+}
+
+function flipMethod(elm, movementDirection) {
+  // First: get the current bounds
+  const first = elm.getBoundingClientRect();
+
+  // execute the script that causes layout change
+  cardSelectionState(elm, movementDirection);
+
+  // Last: get the final bounds
+  const last = elm.getBoundingClientRect();
+
+  // Invert: determine the delta between the
+  // first and last bounds to invert the element
+  const deltaX = first.left - last.left;
+  const deltaY = first.top - last.top;
+  const deltaW = first.width / last.width;
+  const deltaH = first.height / last.height;
+
+  // Play: animate the final element from its first bounds
+  // to its last bounds (which is no transform)
+
+  elm.animate(
+    [
+      {
+        transformOrigin: "top left",
+        transform: `
+    translate(${deltaX}px, ${deltaY}px)
+    scale(${deltaW}, ${deltaH})
+  `,
+      },
+      {
+        transformOrigin: "top left",
+        transform: "none",
+      },
+    ],
+    {
+      duration: 300,
+      easing: "ease-in-out",
+      fill: "both",
+    }
   );
 }
