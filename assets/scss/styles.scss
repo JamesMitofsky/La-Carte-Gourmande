@@ -15,7 +15,7 @@
   --border-radius: 0.3em;
   --secondary-theme: #fffafa;
   --tertiary-theme: #f15e26;
-  --button-theme: #47a66e;
+  --button-theme: #62c089;
   --button-theme-dark: #328856;
   --off-black: rgb(61, 61, 61);
   --app-height: 100%;
@@ -313,6 +313,7 @@ label div:nth-child(2) {
   border: none;
   transition: all 0.2s ease;
   font-size: 1.3em;
+  text-shadow: 0.5px 0.5px 4px var(--button-theme-dark);
 }
 
 .btn:hover {
