@@ -10,5 +10,5 @@ lang: fr
 tel: 02 31 24 68 86
 googlePlacesID: ChIJwft0MNxDCkgRT-Lsca2iLP0
 description: >
-  C'est le restaurant de la cave à vins. Une cuisine créative et des quilles nature ou en biodynamie, avec une offre plutôt tapas le soir."
+  C'est le restaurant de la cave à vins. Une cuisine créative et des quilles nature ou en biodynamie, avec une offre plutôt tapas le soir.
 ---

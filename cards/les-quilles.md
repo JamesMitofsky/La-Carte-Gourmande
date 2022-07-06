@@ -10,5 +10,5 @@ tel: 02 31 93 20 30
 lang: fr
 googlePlacesID: ChIJyc49sb9DCkgRSRGZii7U2SU
 description: >
-  Dans le quartier historique, un bar chaleureux avec une belle carte des vins ! La carte des victuailles est en collab avec des restos du coin."
+  Dans le quartier historique, un bar chaleureux avec une belle carte des vins ! La carte des victuailles est en collab avec des restos du coin.
 ---

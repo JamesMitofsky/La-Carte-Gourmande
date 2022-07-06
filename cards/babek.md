@@ -11,5 +11,5 @@ tel: 02 31 50 87 26
 lang: fr
 googlePlacesID: ChIJB87dQqJDCkgR41JVC9CW2Sg
 description: >
-  Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison."
+  Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison.
 ---
