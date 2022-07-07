@@ -3,7 +3,7 @@ tags: contributors
 businessName: Balthazar
 designerName: Romane
 profession: Agence de communication
-website: www.balthazar-agence.fr
+website: https://www.balthazar-agence.fr
 profilePicture: /assets/photos/profile-pictures/romane.webp
 social-media-handle: "@balthazar_agence"
 summary: >

@@ -3,7 +3,7 @@ tags: contributors
 businessName: Désigraphe
 designerName: Marjolaine
 profession: Illustratrice
-website: www.desigraphe.com
+website: https://www.desigraphe.com
 profilePicture: /assets/photos/profile-pictures/marjolaine.webp
 social-media-handle: "@desigraphe"
 summary: >
