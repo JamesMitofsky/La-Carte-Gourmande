@@ -29,18 +29,18 @@ title: Home
       <p>{{ card.data.description }}</p>
       <div class="contact-links">
         
-        <a class="map-btn" target="_blank" href="">{% include "map-btn.svg" %}</a>
+        <a class="map-btn" target="_blank" href=""><img src="/assets/photos/icons/map.png" alt="Map Icon"></a>
         <!-- if card.data.tel exists -->
         {%- if card.data.tel -%}
-        <a target="_blank" class="tel" href="tel:{{ card.data.tel }}">{% include "tel.svg" %}</a>
+        <a target="_blank" class="tel" href="tel:{{ card.data.tel }}"><img src="/assets/photos/icons/phone.png" alt="Phone Number Icon"></a>
         {%- endif -%}
         
         
         {% if card.data.instagramHandle %}
-        <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}">{% include "instagram.svg" %}</a>
+        <a target="_blank" class="svg-link" href="https://www.instagram.com/{{ card.data.instagramHandle }}"><img src="/assets/photos/icons/instagram.png" alt="Instagram Icon"></a>
         {% endif %}
         {% if card.data.facebookHandle %}
-        <a target="_blank" class="svg-link" href="https://www.facebook.com/{{ card.data.facebookHandle }}">{% include "facebook.svg" %}</a>
+        <a target="_blank" class="svg-link" href="https://www.facebook.com/{{ card.data.facebookHandle }}"><img src="/assets/photos/icons/facebook.png" alt="Facebook Icon"></a>
         {% endif %}
         {% if card.data.website %}
         <a target="_blank" class="svg-link" href="{{ card.data.website }}">{% include "website.svg" %}</a>
