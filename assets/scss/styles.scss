@@ -74,9 +74,10 @@ main {
   filter: drop-shadow(0.07em 0.12em 0.04em gray);
 }
 
-svg {
-  filter: drop-shadow(0.5px 1px 1px #d8b08d);
-}
+// Causing performance problem with flickering. Should exist by default via editing core SVG file.
+// svg {
+//   filter: drop-shadow(0.5px 1px 1px #d8b08d);
+// }
 
 // hamburger styles
 
