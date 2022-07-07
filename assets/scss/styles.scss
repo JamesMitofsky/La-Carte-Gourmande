@@ -426,8 +426,43 @@ dialog::backdrop {
     border-bottom-right-radius: var(--border-radius);
   }
 
+  main {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: min-content 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "header header"
+      "map info";
+  }
+
+  .hero-wrapper {
+    position: relative;
+    grid-area: header;
+    background-color: #ffebeb;
+  }
+
+  #container {
+    grid-area: map;
+  }
+
+  .carousel {
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    grid-area: info;
+  }
+
   .card {
-    min-width: 20em;
+    min-height: 12em;
+    min-width: inherit;
+    .restaurant-preview {
+      height: 6em;
+    }
+    p {
+      margin: 0;
+    }
   }
 
   dialog {
