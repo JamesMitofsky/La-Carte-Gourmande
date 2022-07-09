@@ -1,10 +1,12 @@
 @font-face {
   font-family: "WorkSansRegular";
+  font-display: swap;
   src: url("/assets/fonts/WorkSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Chaney";
+  font-display: swap;
   src: url("/assets/fonts/CHANEY-Regular.otf") format("opentype");
 }
 
@@ -47,7 +49,6 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 0.9em;
-  position: absolute;
   z-index: 1;
   background-color: #fffafab7;
   > * {
@@ -441,7 +442,6 @@ dialog::backdrop {
   }
 
   .hero-wrapper {
-    position: relative;
     grid-area: header;
     background-color: #ffebeb;
   }
