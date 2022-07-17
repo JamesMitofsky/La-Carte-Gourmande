@@ -8,8 +8,10 @@ facebookHandle: babekstreetfood
 number: 9
 cssID: babek
 tel: 02 31 50 87 26
-lang: fr
 googlePlacesID: ChIJB87dQqJDCkgR41JVC9CW2Sg
-description: >
+description_fr: >
   Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison.
+description_en: >
+  For lovers of sandwiches and bowls, this is for you! Everything is prepared for you with local produce that's in season.
+description_es: >
 ---

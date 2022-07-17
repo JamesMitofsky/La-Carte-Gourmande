@@ -7,8 +7,10 @@ facebookHandle: lesquillescaen
 number: 1
 cssID: les-quilles
 tel: 02 31 93 20 30
-lang: fr
 googlePlacesID: ChIJyc49sb9DCkgRSRGZii7U2SU
-description: >
+description_fr: >
   Dans le quartier historique, un bar chaleureux avec une belle carte des vins ! La carte des victuailles est en collab avec des restos du coin.
+description_en: >
+  In a historic district, this charming bar has a carefully selected wine menu! As for the food menu, it's spread of options are made possible by collaborating with neighboring restaurants.
+description_es: >
 ---

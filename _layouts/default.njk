@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
   <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -8,6 +8,12 @@
       name="viewport"
       content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
     />
+
+    <!-- Language support -->
+    <link rel="alternate" hreflang="{{lang}}" href="{{page.url}}">
+    {% for link in page.url | locale_links %}
+      <link rel="alternate" hreflang="{{link.lang}}" href="https://www.cartegourmande.fr{{link.url}}">
+    {% endfor %}
 
     <!-- Apple support -->
     <meta name="apple-mobile-web-app-capable" content="yes"></meta>

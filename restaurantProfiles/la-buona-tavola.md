@@ -7,8 +7,10 @@ instagramHandle: la_buona_tavola_caen
 number: 4
 cssID: la-buona-tavola
 tel: 02 31 50 35 35
-lang: fr
 googlePlacesID: ChIJGWAg7r9CCkgRmMay_glp4z4
-description: >
+description_fr: >
   On est sur d'y passer un bon moment ! L'accueil et la décoration font le charme de « la Buona ». On adore le risotto qui est crémeux à souhait ainsi que la terrasse cachée.
+description_en: >
+  We've had a lot of fun times at La Buona Tavola. The charming ambiance truly merits being called "la Buona." Having the creamy risotto on their beautiful terrace is to die for.
+description_es: >
 ---

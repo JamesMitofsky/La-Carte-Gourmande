@@ -164,6 +164,7 @@ label div:nth-child(2) {
   gap: 1em;
   padding: 1em;
   overflow-x: scroll;
+  box-sizing: border-box;
 }
 
 .active-card .card-title {
@@ -449,7 +450,7 @@ dialog::backdrop {
   }
 
   .carousel {
-    width: 20em;
+    width: 22em;
     display: flex;
     flex-direction: column;
     height: 100%;
