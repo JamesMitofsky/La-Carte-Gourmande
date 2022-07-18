@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{lang}}" dir="ltr">
   <head>
-    <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico" />
     <meta
-      name="viewport"
-      content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    name="viewport"
+    content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
     />
-
+    
     <!-- Language support -->
     <meta charset="UTF-8">
     <link rel="alternate" hreflang="fr" href="https://cartegourmande.fr/"/>
@@ -18,33 +17,34 @@
     <!-- Apple support -->
     <meta name="apple-mobile-web-app-capable" content="yes"></meta>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
-
+    
     <!-- Social tags -->
+    <title>{{ title }}</title>
     <!-- Primary Meta Tags -->
-    <title>La Carte Gourmande</title>
-    <meta name="title" content="La Carte Gourmande" />
+    <meta name="title" content="{{ title}}" />
+
     <meta
       name="description"
-      content="10 adresses pour se régaler à Caen! Trouvez votre prochain bar préféré."
+      content="{{ description }}"
     />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://caen-map.netlify.app/" />
-    <meta property="og:title" content="La Carte Gourmande" />
+    <meta property="og:title" content="{{ title }}" />
     <meta
       property="og:description"
-      content="10 adresses pour se régaler à Caen! Trouvez votre prochain bar préféré."
+      content="{{ description }}"
     />
     <meta property="og:image" content="/assets/photos/site-preview.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://caen-map.netlify.app/" />
-    <meta property="twitter:title" content="La Carte Gourmande" />
+    <meta property="twitter:title" content="{{ title }}" />
     <meta
       property="twitter:description"
-      content="10 adresses pour se régaler à Caen! Trouvez votre prochain bar préféré."
+      content="{{ description }}"
     />
     <meta property="twitter:image" content="/assets/photos/site-preview.png" />
   </head>
