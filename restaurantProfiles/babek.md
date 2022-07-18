@@ -10,8 +10,8 @@ cssID: babek
 tel: 02 31 50 87 26
 googlePlacesID: ChIJB87dQqJDCkgR41JVC9CW2Sg
 description_fr: >
-  Pour les aficionados des dwich et des bowls ! Tout est préparé sur place ave des produits locaux et de saison.
+  Pour les aficionados des dwich et des bowls ! Tout est préparé sur place avec des produits locaux et de saison.
 description_en: >
-  For lovers of sandwiches and bowls, this is for you! Everything is prepared for you with local produce that's in season.
+  For sandwiches lovers anywhere, this is for you! This menu has a something for everyone, and it's prepared with in-season, local produce.
 description_es: >
 ---
