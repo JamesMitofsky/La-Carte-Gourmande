@@ -121,18 +121,21 @@ function listenForCardDetails() {
 
 function openCloseCard(card) {
   // get readmore element
-  let readMore = card.getElementsByClassName("read-more")[0];
+  let cardBlurElm = card.getElementsByClassName("read-more")[0];
 
   // get child element of readmore
-  let readMoreChild = readMore.firstElementChild;
+  let cardBtn = cardBlurElm.firstElementChild;
+
+  let cardBtnOpen = cardBtn.dataset.open;
+  let cardBtnClose = cardBtn.dataset.close;
 
   if (!card.classList.contains("selected-card")) {
     flipMethod(card, "enter");
     // update text content of button
-    readMoreChild.textContent = "Revoir la Carte 🧑‍🍳";
+    cardBtn.textContent = cardBtnClose;
   } else {
     flipMethod(card, "leave");
-    readMoreChild.textContent = "Allez-y 🍽";
+    cardBtn.textContent = cardBtnOpen;
   }
 }
 
