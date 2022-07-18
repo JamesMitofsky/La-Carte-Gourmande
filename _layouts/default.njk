@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{lang}}">
+<html lang="{{lang}}" dir="rtl">
   <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -10,11 +10,11 @@
     />
 
     <!-- Language support -->
-    <link rel="alternate" hreflang="{{lang}}" href="{{page.url}}">
-    {% for link in page.url | locale_links %}
-      <link rel="alternate" hreflang="{{link.lang}}" href="https://www.cartegourmande.fr{{link.url}}">
-    {% endfor %}
-
+    <meta charset="UTF-8">
+    <link rel="alternate" hreflang="fr" href="https://cartegourmande.fr/"/>
+    <link rel="alternate" hreflang="en" href="https://cartegourmande.fr/en"/>
+    <link rel="alternate" hreflang="es" href="https://cartegourmande.fr/es"/>
+    
     <!-- Apple support -->
     <meta name="apple-mobile-web-app-capable" content="yes"></meta>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
