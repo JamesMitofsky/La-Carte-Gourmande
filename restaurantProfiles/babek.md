@@ -14,4 +14,5 @@ description_fr: >
 description_en: >
   For sandwiches lovers anywhere, this is for you! This menu has a something for everyone, and it's prepared with in-season, local produce.
 description_es: >
+  ¡Esta es la opción para los aficionados de los sandiwches y los bowls! Todo es preparado en el mismo restaurante, haciendo uso de productos locales y de temporada.
 ---

@@ -13,4 +13,5 @@ description_fr: >
 description_en: >
   The bistro of the neighborhood, La Belle Equipe's lobby has a warm atmosphere, and every plate is homemade with in-season, locally sourced produce. You've got to try it!
 description_es: >
+  Estamos hablando del Bistró del barrio. En él, nos podemos encontrar con una atención convivial y una cocina cacera, que hace uso de excelentes productos de temporada. ¡Como para deleitarse!
 ---

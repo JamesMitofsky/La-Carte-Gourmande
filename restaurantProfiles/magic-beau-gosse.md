@@ -13,4 +13,5 @@ description_fr: >
 description_en: >
   "Our magic sauce is for my city." These sandwhiches became renowned after musician, Orelsan, featured them.
 description_es: >
+  Sus sandwiches se han hecho especialmente reconocidos después de que el rapero oriundo de Caen, Orelsan, lo resaltara en una de sus canciones.  “Por mi ciudad, salsa magique beau gosse”
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: La Carte Gourmande
-lang: en
+lang: es
 ---
 <main>
   <header id="info-btn"  class="hero-wrapper">
@@ -27,7 +27,7 @@ lang: en
         <span class="card-title">{{ card.data.title }}</span>
       </h2>
       <img class="restaurant-preview" src="/assets/photos/restaurants/{{ card.data.cssID }}/preview.webp" alt="Preview image of {{ card.data.title }}">
-      <p>{{ card.data.description_en }}</p>
+      <p>{{ card.data.description_es }}</p>
       <div class="contact-links">
         
         <a class="map-btn" target="_blank" href=""><img src="/assets/photos/icons/map.png" alt="Map Icon"></a>
@@ -50,7 +50,7 @@ lang: en
       </div>
       <button class="read-more"
         >
-        <div data-open="{{card.data.openBtn_en}}" data-close="{{card.data.closeBtn_en}}" class="card-btn btn">{{card.data.openBtn_en}}
+        <div data-open="{{card.data.openBtn_es}}" data-close="{{card.data.closeBtn_es}}" class="card-btn btn">{{card.data.openBtn_es}}
         </div>
       </button>
     </div>
@@ -62,7 +62,7 @@ lang: en
   <div class="dialog-content">
     <div class="dialog-header">
       <header>
-        <h1>The Makers</h1>
+        <h1>Creadores</h1>
       </header>
     </div>
       {%- for contributor in collections.contributors -%}
@@ -74,12 +74,12 @@ lang: en
         />
       <h2>{{ contributor.data.businessName }}</h2>
         <a target="_blank" href="{{ contributor.data.website }}">
-        <subtitle>Explore {{contributor.data.designerName}}'s work!</subtitle></a
+        <subtitle>Explorar el trabajo de {{contributor.data.designerName}}!</subtitle></a
         >
-        <p>{{ contributor.data.summary_en }}</p>
+        <p>{{ contributor.data.summary_es }}</p>
       </div>
     </div>
     {%- endfor -%}
-    <button class="btn" id="close-dialog">Return to The Map 🗺</button>
+    <button class="btn" id="close-dialog">Volver al Mapa 🗺</button>
   </div>
 </dialog>

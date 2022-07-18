@@ -13,4 +13,5 @@ description_fr: >
 description_en: >
   When you walk through the door, you arrive in Spain. The courtyard is vibrant, and trying the Sangria y croquetas is a must.
 description_es: >
+  Atravesando la puerta, nos transportamos a España, con un interior caluroso y familiar, y con croquetas y sangrías que se está en la obligación de probar.
 ---

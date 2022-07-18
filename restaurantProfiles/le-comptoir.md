@@ -13,4 +13,5 @@ description_fr: >
 description_en: >
   From lunch to aperotifs, their fresh and savory dishes have a memorably exotic flavor, made all the more memorable had on the terrace, if you can!
 description_es: >
+  Desde el almuerzo hasta el aperitivo, siempre van a encontrar platos frescos, sabrosos y reviestidos de notas exóticas. Cada uno de ellos a comer preferiblemente en terraza.
 ---

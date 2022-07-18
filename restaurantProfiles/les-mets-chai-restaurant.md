@@ -13,4 +13,5 @@ description: >
 description_en: >
   Quintessentially French, plates are served in a decedant wine cellar, where you'll find a diverse range of options being served, including their famous tapas.
 description_es: >
+  Se trata del restaurante de una cava de vinos. En él, podemos encontrar una cocina creativa con una variedad de “quilles” y con un menú de tapas en horas de la tarde.
 ---
