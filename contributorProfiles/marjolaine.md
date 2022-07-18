@@ -16,10 +16,5 @@ summary_fr: >
 summary_en: >
   Marjolaine is an illustrator and creator of bold visual projects. From her love of colors and refined textures, she gives her work delicate attention. Her sensitivity to creative style makes her standout from the crowd. Le Désigraphe also has its own range of stationary.
 summary_es: >
-  Mejorana es ilustradora y creadora de identidades
-  visuales fuertes. Por su amor por los colores, los
-  hermosos papeles y texturas, ella sublima cada uno
-  proyectos. Su sensibilidad marca la diferencia en su
-  universo creativo. El Degenerador también tiene su propio
-  gama de papelería.
+  Marjornlain es ilustradora y creadora de identidades viduales fuertes. Gracias a su amor por los colores y las texturas, ella es capaz de sublimar cada uno de sus proyectos. Su sensibilidad hace la diferencia en su universo creativo. Le désigraphe tiene también su propia gama de diseños de papelería.
 ---

@@ -11,5 +11,5 @@ summary_fr: >
 summary_en: >
   "It's astonishing!" This is Balthazar’s favorite gourmet expression. Communication agency specialized in everything that can be eaten and drunk, Balthazar accompanies the most gourmet projects. They also have in common an environmental or social commitment.
 summary_es: >
-  "¡Eso es travieso!" Esta es la frase codiciosa favorita de Balthazar. Agencia de comunicación especializada en todo lo que se come y bebe, Balthazar acompaña los proyectos más golosos. También tienen en común un compromiso medioambiental o social.
+  Agente de comunicación especializada en todo lo que se come y se bebe. Balthazar acompaña los proyectos más gourmet. Sus proyectos también tienen como punto en común un compromiso ambiental o social.
 ---

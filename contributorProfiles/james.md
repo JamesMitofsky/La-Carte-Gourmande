@@ -12,5 +12,5 @@ summary_fr: >
 summary_en: >
   James loves building fluid user experiences on the web, and having just moved to France, he's happily — and clumsily — learning to speak French. Always a fan of working with the curious and enthusiastic, don't hesitate to reach out with a project idea.
 summary_es: >
-  A James le encanta construir experiencias de usuario fluidas en la web, y después de mudarse a Francia, está felizmente - y torpemente - aprendiendo a hablar francés. Siempre un fan de trabajar con los curiosos y entusiastas, no dude en ponerse en contacto con una idea de proyecto.
+  James es un desarrollador de sitios web, especialializado en la experiencia del usuario. Habiendose mudado desde los Estados Unidos, ha encontrado pasión en crear experiencia únicas para su comunidad local. Siempre está dispuesto a hacer parte de nuevas colaboraciones.
 ---
