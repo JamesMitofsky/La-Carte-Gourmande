@@ -7,6 +7,20 @@
     name="viewport"
     content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
     />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+      if(window.location.href.includes('localhost')) {
+        console.log('Skipped running analytics')
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-ZRT2WF0YQH');
+      }
+      </script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRT2WF0YQH"></script>
     
     <!-- Language support -->
     <meta charset="UTF-8">
