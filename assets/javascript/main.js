@@ -141,7 +141,7 @@ function openCloseCard(card) {
 
 function listenForDialog() {
   // get element with id "info-btn"
-  let infoBtn = document.getElementById("info-btn");
+  let infoBtn = document.getElementById("menu_checkbox");
   // get dialog element by tag
   let dialog = document.getElementsByTagName("dialog")[0];
 
