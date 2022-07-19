@@ -580,6 +580,8 @@ html {
 body,
 html {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 // looped function to animate in the paths of the SVG piece by piece

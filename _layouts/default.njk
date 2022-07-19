@@ -54,12 +54,18 @@
       <h1 class="hero-title">{{title}}</h1>
       <div class="sl-nav">
         <ul>
-          <li><b><i class="sl-flag flag-fr"><div id="french"></div></i> Français</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+          {% if 'es' in page.url %}
+            <li><b><i class="sl-flag flag-fr"><div id="spanish"></div></i> Español</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+          {% elif 'en' in page.url %}
+            <li><b><i class="sl-flag flag-fr"><div id="english"></div></i> English</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+          {% else %}
+            <li><b><i class="sl-flag flag-fr"><div id="french"></div></i> Français</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+          {% endif %}
             <div class="triangle"></div>
             <ul>
-              <li><a href="/fr"><i class="sl-flag flag-fr"><div id="french"></div></i> <span class="active">Français</span></a></li>
-              <li><a href="/en"> <i class="sl-flag flag-usa"><div id="english"></div></i> <span>English</span></a></li>
-              <li><a href="/es"><i class="sl-flag flag-es"><div id="spanish"></div></i> <span>Español</span></a></li>
+              <li><a href="/"><i class="sl-flag flag-fr"><div id="french"></div></i> <span {% if 'es' not in page.url and 'en' not in page.url %}class="active"{% endif %} >Français</span></a></li>
+              <li><a href="/en"> <i class="sl-flag flag-usa"><div id="english"></div></i> <span {% if 'en' in page.url %}class="active"{% endif %}>English</span></a></li>
+              <li><a href="/es"><i class="sl-flag flag-es"><div id="spanish"></div></i> <span {% if 'es' in page.url %}class="active"{% endif %}>Español</span></a></li>
             </ul>
           </li>
         </ul>
