@@ -132,7 +132,8 @@ body {
   font-family: "Muli", sans-serif;
 }
 .sl-nav {
-  display: inline;
+  min-width: fit-content;
+  margin: 0 1em;
   a {
     text-decoration: none;
     color: var(--off-black);
@@ -537,6 +538,9 @@ dialog::backdrop {
   .hero-wrapper {
     grid-area: header;
     background-color: #ffebeb;
+    .hero-title {
+      width: -webkit-fill-available;
+    }
   }
 
   #container {
