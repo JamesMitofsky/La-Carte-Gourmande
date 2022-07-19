@@ -1,12 +1,20 @@
 main();
 
 function main() {
+  // detect if card is being hovered
   listenForCardsHover();
-  createMapLink();
-  listenForDialog();
-  listenForCardDetails();
-  getAppHeight();
+  // has a map pin been hovered?
   listenToPOIs();
+
+  // build links to POIs
+  createMapLink();
+
+  // should the creator dialog be shown?
+  listenForDialog();
+
+  // is any full card view being requested?
+  listenForCardDetails();
+  // listen for details with swipe
   detectCardOpenSwipe();
 }
 
@@ -53,15 +61,6 @@ function scrollToCard(cardDistanceToLeft) {
   carousel.scrollTo(newPos, 0);
 }
 
-function getAppHeight() {
-  const appHeight = () => {
-    const doc = document.documentElement;
-    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-  };
-  window.addEventListener("resize", appHeight);
-  appHeight();
-}
-
 function listenToPOIs() {
   // get all elements with class POI
   let pointsOfInterest = document.getElementsByClassName("POI");
@@ -87,10 +86,13 @@ function listenToPOIs() {
           // if card already has active-card class, return
           if (card.classList.contains("active-card")) return;
 
+          // reset which card is active
           removeClassFromElements(cards, "active-card");
-
-          // add class active-card to card
           card.classList.add("active-card");
+
+          // give POI active state
+          removeClassFromElements(pointsOfInterest, "active-POI");
+          poiEl.classList.add("active-POI");
 
           // get position of card
           let cardPosition = getElDimensions(card);
@@ -171,7 +173,7 @@ function hideElement(el) {
   el.classList.add("hidden");
 }
 
-function matchCardsWithPins(activeCard) {
+function indicateActivePinAndCard(activeCard) {
   // get elements with class point-of-interest
   let pointsOfInterest = document.getElementsByClassName("POI");
 
@@ -220,7 +222,7 @@ function highlightCardAndPin(card, eventName, cards) {
       if (card.classList.contains("active-card")) return;
 
       // bounce pin related to card
-      matchCardsWithPins(card);
+      indicateActivePinAndCard(card);
 
       // remove class from all other cards before re-assiging
       removeClassFromElements(cards, "active-card");
